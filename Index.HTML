@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. M. Quamrul Hassan | Paediatrics & Neonatology</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#0B1F3B;
+      --gold:#C8A96A;
+      --beige:#FBF7F0;
+      --teal:#1E8E8A;
+      --charcoal:#1F2937;
+      --muted:#6B7280;
+
+      --radius:22px;
+      --shadow: 0 10px 30px rgba(15,23,42,.10), 0 2px 10px rgba(15,23,42,.06);
+      --shadow2: 0 14px 40px rgba(15,23,42,.14), 0 2px 10px rgba(15,23,42,.06);
+
+      --max: 1120px;
+      --pad: 28px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--charcoal);
+      background: #fff;
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
+    .container{max-width:var(--max); margin:0 auto; padding:0 var(--pad)}
+    .section{padding:86px 0}
+    .h-serif{font-family:"Playfair Display", serif}
+    .kicker{letter-spacing:.12em; text-transform:uppercase; font-size:.8rem; color:var(--muted)}
+    .title{font-size: clamp(1.6rem, 2.4vw, 2.2rem); margin:10px 0 10px}
+    .sub{color:var(--muted); max-width:70ch}
+
+    /* Top bar */
+    .topbar{
+      position: sticky; top:0; z-index:50;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(15,23,42,.06);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; flex-direction:column; line-height:1.1;
+    }
+    .brand strong{font-weight:700}
+    .brand span{font-size:.85rem; color:var(--muted)}
+    .navlinks{display:flex; gap:18px; flex-wrap:wrap; justify-content:flex-end}
+    .navlinks a{
+      font-size:.95rem; color:rgba(31,41,55,.9);
+      padding:8px 10px; border-radius:12px;
+    }
+    .navlinks a:hover{background: rgba(200,169,106,.14)}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius: 999px;
+      font-weight:600;
+      border:1px solid rgba(200,169,106,.55);
+      box-shadow: 0 8px 20px rgba(200,169,106,.18);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      gap:10px;
+      background: linear-gradient(180deg, rgba(200,169,106,.22), rgba(200,169,106,.08));
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2)}
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(200,169,106,.95), rgba(200,169,106,.78));
+      border-color: rgba(200,169,106,.95);
+      color: #1b2230;
+    }
+    .btn.ghost{
+      border-color: rgba(15,23,42,.12);
+      background: rgba(255,255,255,.7);
+      box-shadow:none;
+    }
+    .btnRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:20px}
+
+    /* Cards */
+    .grid{display:grid; gap:18px}
+    .grid.three{grid-template-columns: repeat(3, minmax(0, 1fr))}
+    .grid.two{grid-template-columns: repeat(2, minmax(0, 1fr))}
+    @media (max-width: 900px){
+      .grid.three, .grid.two{grid-template-columns:1fr}
+      .section{padding:64px 0}
+    }
+    .card{
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15,23,42,.06);
+      overflow:hidden;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{transform: translateY(-2px); box-shadow: var(--shadow2)}
+    .card .p{padding:18px}
+    .tag{
+      display:inline-flex; align-items:center;
+      font-size:.82rem; padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      color: rgba(31,41,55,.85);
+      background: rgba(255,255,255,.7);
+      gap:8px;
+    }
+    .tag.gold{border-color: rgba(200,169,106,.55); background: rgba(200,169,106,.12)}
+    .tag.teal{border-color: rgba(30,142,138,.45); background: rgba(30,142,138,.10)}
+    .meta{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 0}
+    .card h3{margin:10px 0 8px; font-size:1.12rem}
+    .card p{margin:0; color:var(--muted)}
+    .card .actions{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
+
+    /* Hero */
+    .hero{
+      background: radial-gradient(1200px 500px at 20% 20%, rgba(200,169,106,.30), transparent 60%),
+                  radial-gradient(900px 500px at 80% 30%, rgba(30,142,138,.18), transparent 60%),
+                  linear-gradient(180deg, #FFF, var(--beige));
+      padding: 74px 0 26px;
+    }
+    .heroWrap{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center;
+    }
+    @media (max-width: 900px){
+      .heroWrap{grid-template-columns:1fr}
+    }
+    .hero h1{
+      font-family:"Playfair Display", serif;
+      font-size: clamp(2rem, 3.3vw, 3.1rem);
+      margin:10px 0 10px;
+      color: #0e1b2f;
+    }
+    .hero .lead{font-size:1.05rem; color: rgba(31,41,55,.80); max-width:70ch}
+    .portrait{
+      border-radius: 28px;
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,.08);
+      box-shadow: var(--shadow2);
+      background: rgba(255,255,255,.6);
+    }
+    .portrait .ph{
+      aspect-ratio: 4/5;
+      display:flex; align-items:center; justify-content:center;
+      color: rgba(31,41,55,.55);
+      font-weight:600;
+      background: linear-gradient(180deg, rgba(255,255,255,.8), rgba(251,247,240,.9));
+    }
+
+    /* Section themes */
+    .welcome{background:#fff}
+    .parents{background: linear-gradient(180deg, var(--beige), #fff)}
+    .academic{
+      background: linear-gradient(180deg, rgba(11,31,59,.98), rgba(11,31,59,.92));
+      color:#fff;
+    }
+    .academic .sub, .academic p{color: rgba(255,255,255,.78)}
+    .academic .card{background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.10)}
+    .academic .card p{color: rgba(255,255,255,.76)}
+    .academic .tag{border-color: rgba(255,255,255,.18); color: rgba(255,255,255,.86); background: rgba(255,255,255,.06)}
+    .academic .btn.ghost{background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); color:#fff}
+
+    /* Research timeline */
+    .timeline{display:grid; gap:14px; margin-top:18px}
+    .titem{
+      display:grid; grid-template-columns: 18px 1fr; gap:14px;
+      padding:16px 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(15,23,42,.07);
+      box-shadow: var(--shadow);
+      background:#fff;
+    }
+    .dot{
+      width:12px; height:12px; border-radius:999px;
+      margin-top:7px;
+      background: rgba(200,169,106,.95);
+      box-shadow: 0 0 0 6px rgba(200,169,106,.15);
+    }
+    .titem h4{margin:0 0 6px}
+    .titem .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .titem p{margin:0; color:var(--muted)}
+
+    /* Videos */
+    .tabs{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0}
+    .tab{
+      cursor:pointer;
+      padding:10px 14px; border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);
+      background:#fff;
+      font-weight:600;
+    }
+    .tab.active{border-color: rgba(30,142,138,.55); background: rgba(30,142,138,.10)}
+    .slider{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:18px}
+    @media (max-width: 900px){ .slider{grid-template-columns:1fr} }
+    .thumb{
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,.08);
+      background: linear-gradient(180deg, rgba(30,142,138,.10), rgba(200,169,106,.08));
+      aspect-ratio: 16/9;
+      display:flex; align-items:center; justify-content:center;
+      color: rgba(31,41,55,.60);
+      font-weight:700;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .vcard:hover .thumb{transform: scale(1.01); box-shadow: var(--shadow2)}
+
+    /* Contact */
+    .contact{background: linear-gradient(180deg, var(--beige), #fff)}
+    form{display:grid; gap:12px}
+    input, textarea{
+      width:100%;
+      padding:12px 14px;
+      border-radius: 16px;
+      border:1px solid rgba(15,23,42,.12);
+      font: inherit;
+      background:#fff;
+      outline:none;
+    }
+    input:focus, textarea:focus{border-color: rgba(30,142,138,.55); box-shadow: 0 0 0 4px rgba(30,142,138,.12)}
+    textarea{min-height:120px; resize:vertical}
+
+    footer{
+      padding:26px 0;
+      border-top: 1px solid rgba(15,23,42,.06);
+      color: var(--muted);
+      font-size:.92rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <strong>Dr. M. Quamrul Hassan</strong>
+        <span>Paediatrics & Neonatology</span>
+      </div>
+      <div class="navlinks">
+        <a href="#parents">Health Blog</a>
+        <a href="#education">Education Hub</a>
+        <a href="#research">Research Library</a>
+        <a href="#videos">Videos</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="container heroWrap">
+      <div>
+        <div class="kicker">Paediatrics • Neonatology • Research • Medical Education</div>
+        <h1>Dr. M. Quamrul Hassan<br><span style="font-weight:600; font-size:.74em; color:rgba(14,27,47,.78)">Paediatrics & Neonatology | Researcher | Medical Educator</span></h1>
+        <p class="lead">Guiding families with compassion. Supporting clinicians with clarity.</p>
+
+        <div class="btnRow">
+          <a class="btn primary" href="#parents">Health Blog</a>
+          <a class="btn" href="#education">Education Hub</a>
+          <a class="btn" href="#research">Research Library</a>
+          <a class="btn" href="#videos">Videos</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="portrait" aria-label="Portrait">
+        <!-- Replace this placeholder with your photo -->
+        <div class="ph">Portrait Placeholder</div>
+        <!-- Example:
+          <img src="your-portrait.jpg" alt="Dr. M. Quamrul Hassan">
+        -->
+      </div>
+    </div>
+  </header>
+
+  <!-- WELCOME -->
+  <section class="section welcome" id="welcome">
+    <div class="container">
+      <div class="kicker">Welcome</div>
+      <h2 class="title h-serif">A calm place for families and clinicians</h2>
+      <p class="sub">
+        Welcome. I created this space to help parents understand their children’s health with confidence,
+        and to support students and fellow doctors with evidence-based insights. Whether you’re here to learn,
+        explore, or stay updated, I’m glad you’re here.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOR PARENTS -->
+  <section class="section parents" id="parents">
+    <div class="container">
+      <div class="kicker">For Parents</div>
+      <h2 class="title h-serif">Friendly, clear guidance for everyday child health</h2>
+      <p class="sub">Practical explanations, warning signs to watch for, and common misconceptions clarified.</p>
+
+      <div class="grid three" style="margin-top:18px">
+        <article class="card">
+          <div class="p">
+            <span class="tag teal">Featured • Fever</span>
+            <h3 class="h-serif">Fever in Children: What Parents Should Know</h3>
+            <p>Simple steps, red flags, and when to seek medical care.</p>
+            <div class="actions">
+              <a class="btn" href="#">Read Article</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="p">
+            <span class="tag gold">Featured • Vaccines</span>
+            <h3 class="h-serif">Vaccination Myths vs Facts</h3>
+            <p>Clear answers to common fears, with science-based reassurance.</p>
+            <div class="actions">
+              <a class="btn" href="#">Read Article</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="p">
+            <span class="tag">Featured • Cough</span>
+            <h3 class="h-serif">When to Worry About Cough</h3>
+            <p>What’s normal, what’s not, and how to decide next steps.</p>
+            <div class="actions">
+              <a class="btn" href="#">Read Article</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top:18px">
+        <a class="btn primary" href="#">View All Parent Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR DOCTORS & STUDENTS -->
+  <section class="section academic" id="education">
+    <div class="container">
+      <div class="kicker" style="color:rgba(255,255,255,.72)">For Doctors & Students</div>
+      <h2 class="title h-serif">Premium academic zone</h2>
+      <p class="sub">Case discussions, neonatology updates, guidelines, and exam-focused insights.</p>
+
+      <div class="grid three" style="margin-top:18px">
+        <article class="card">
+          <div class="p">
+            <div class="meta">
+              <span class="tag">Case Discussion</span>
+              <span class="tag">Ref: DOI/PMID</span>
+            </div>
+            <h3 class="h-serif">Case Discussions</h3>
+            <p>Structured reasoning, differential diagnosis, and key takeaways.</p>
+            <div class="actions">
+              <a class="btn ghost" href="#">Open</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="p">
+            <div class="meta">
+              <span class="tag">Neonatology Update</span>
+              <span class="tag">Ref: DOI/PMID</span>
+            </div>
+            <h3 class="h-serif">Neonatology Updates</h3>
+            <p>Concise summaries of practice-changing evidence.</p>
+            <div class="actions">
+              <a class="btn ghost" href="#">Open</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="p">
+            <div class="meta">
+              <span class="tag">Exam Prep</span>
+              <span class="tag">Ref: Guideline</span>
+            </div>
+            <h3 class="h-serif">Exam Prep Insights</h3>
+            <p>High-yield concepts presented with clinical clarity.</p>
+            <div class="actions">
+              <a class="btn ghost" href="#">Open</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="section" id="research">
+    <div class="container">
+      <div class="kicker">Research Highlights</div>
+      <h2 class="title h-serif">An academic gallery of your work</h2>
+      <p class="sub">Curated publications with short abstracts and direct DOI access.</p>
+<div style="margin-top:16px">
+  <a class="btn" 
+     href="https://www.researchgate.net/profile/M-Quamrul-Hassan-2/publications"
+     target="_blank"
+     rel="noopener noreferrer">
+     View my ResearchGate profile
+  </a>
+</div>
+
+      <div class="timeline">
+        <div class="titem">
+          <div class="dot"></div>
+          <div>
+            <div class="row">
+              <h4 class="h-serif" style="margin:0">Research Title #1</h4>
+              <span class="tag">DOI: 10.xxxx/xxxxx</span>
+            </div>
+            <p>Abstract snippet (2–3 lines). What was studied, key result, and why it matters.</p>
+            <div class="actions" style="margin-top:12px">
+              <a class="btn primary" href="#">View Full Paper</a>
+              <a class="btn" href="#">DOI Link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="dot"></div>
+          <div>
+            <div class="row">
+              <h4 class="h-serif" style="margin:0">Research Title #2</h4>
+              <span class="tag">DOI: 10.xxxx/xxxxx</span>
+            </div>
+            <p>Abstract snippet (2–3 lines). Keep it readable and not overly dense.</p>
+            <div class="actions" style="margin-top:12px">
+              <a class="btn primary" href="#">View Full Paper</a>
+              <a class="btn" href="#">DOI Link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="titem">
+          <div class="dot"></div>
+          <div>
+            <div class="row">
+              <h4 class="h-serif" style="margin:0">Research Title #3</h4>
+              <span class="tag">DOI: 10.xxxx/xxxxx</span>
+            </div>
+            <p>Abstract snippet (2–3 lines). Add the journal name if you want.</p>
+            <div class="actions" style="margin-top:12px">
+              <a class="btn primary" href="#">View Full Paper</a>
+              <a class="btn" href="#">DOI Link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="section" id="videos">
+    <div class="container">
+      <div class="kicker">Video Showcase</div>
+      <h2 class="title h-serif">Warm, modern teaching — in short, useful segments</h2>
+      <p class="sub">Organized by audience. Replace placeholders with your YouTube video links and thumbnails.</p>
+
+      <div class="tabs" role="tablist" aria-label="Video categories">
+        <button class="tab active" data-tab="parents">For Parents</button>
+        <button class="tab" data-tab="students">For Students</button>
+        <button class="tab" data-tab="doctors">For Doctors</button>
+      </div>
+
+      <div id="tab-parents" class="slider">
+        <a class="card vcard" href="#">
+          <div class="thumb">Thumbnail</div>
+          <div class="p">
+            <span class="tag teal">Parents</span>
+            <h3 class="h-serif">Video Title (Parents) #1</h3>
+            <p>One-line description.</p>
+          </div>
+        </a>
+        <a class="card vcard" href="#">
+          <div class="thumb">Thumbnail</div>
+          <div class="p">
+            <span class="tag teal">Parents</span>
+            <h3 class="h-serif">Video Title (Parents) #2</h3>
+            <p>One-line description.</p>
+          </div>
+        </a>
+        <a class="card vcard" href="#">
+          <div class="thumb">Thumbnail</div>
+          <div class="p">
+            <span class="tag teal">Parents</span>
+            <h3 class="h-serif">Video Title (Parents) #3</h3>
+            <p>One-line description.</p>
+          </div>
+        </a>
+      </div>
+
+      <div id="tab-students" class="slider" style="display:none">
+        <a class="card vcard" href="#">
+          <div class="thumb">Thumbnail</div>
+          <div class="p">
+            <span class="tag">Students</span>
+            <h3 class="h-serif">Video Title (Students) #1</h3>
+            <p>One-line description.</p>
+          </div>
+        </a>
+        <a class="card vcard" href="#">
+          <div class="thumb">Thumbnail</div>
+          <div class="p">
+            <span class="tag">Students</span>
+            <h3 class="h-serif">Video Title (Students) #2</h3>
+            <p>One-line description.</p>
+          </div>
+        </a>
+        <a class="card vcard" href="#">
+          <div class="thumb">Thumbnail</div>
+          <div class="p">
+            <span class="tag">Students</span>
+            <h3 class="h-serif">Video Title (Students) #3</h3>
+            <p>One-line description.</p>
+          </div>
+        </a>
+      </div>
+
+      <div id="tab-doctors" class="slider" style="display:none">
+        <a class="card vcard" href="#">
+          <div class="thumb">Thumbnail</div>
+          <div class="p">
+            <span class="tag gold">Doctors</span>
+            <h3 class="h-serif">Video Title (Doctors) #1</h3>
+            <p>One-line description.</p>
+          </div>
+        </a>
+        <a class="card vcard" href="#">
+          <div class="thumb">Thumbnail</div>
+          <div class="p">
+            <span class="tag gold">Doctors</span>
+            <h3 class="h-serif">Video Title (Doctors) #2</h3>
+            <p>One-line description.</p>
+          </div>
+        </a>
+        <a class="card vcard" href="#">
+          <div class="thumb">Thumbnail</div>
+          <div class="p">
+            <span class="tag gold">Doctors</span>
+            <h3 class="h-serif">Video Title (Doctors) #3</h3>
+            <p>One-line description.</p>
+          </div>
+        </a>
+      </div>
+
+      <div style="margin-top:18px">
+        <a class="btn primary" href="#">View All Videos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EBOOK -->
+  <section class="section" id="ebooks" style="background:linear-gradient(180deg,#fff,var(--beige))">
+    <div class="container">
+      <div class="kicker">E-Books</div>
+      <h2 class="title h-serif">Boutique preview — future-ready</h2>
+      <p class="sub">Even before selling, this builds anticipation and trust. Add “Free download” items when ready.</p>
+
+      <div class="grid three" style="margin-top:18px">
+        <div class="card">
+          <div class="p">
+            <span class="tag gold">Coming Soon</span>
+            <h3 class="h-serif">E-Book Title #1</h3>
+            <p>One-sentence promise (what problem it solves for parents or learners).</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="p">
+            <span class="tag gold">Coming Soon</span>
+            <h3 class="h-serif">E-Book Title #2</h3>
+            <p>One-sentence promise.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="p">
+            <span class="tag teal">Free Download</span>
+            <h3 class="h-serif">Starter Guide (Free)</h3>
+            <p>Short printable PDF for parents / students (optional).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="kicker">About Me</div>
+      <h2 class="title h-serif">Warm professionalism</h2>
+
+      <div class="grid two" style="margin-top:18px; align-items:start">
+        <div class="card">
+          <div class="portrait" style="border-radius:var(--radius)">
+            <div class="ph" style="aspect-ratio: 4/4">Portrait Placeholder</div>
+          </div>
+        </div>
+
+        <div>
+          <p class="sub" style="margin-top:0">
+            Write a concise bio: your clinical focus (paediatrics/neonatology), your approach to care,
+            and your commitment to evidence-based education.
+          </p>
+          <div class="grid" style="gap:10px; margin-top:14px">
+            <div class="card"><div class="p">
+              <strong class="h-serif">Qualifications</strong><br>
+              <span class="sub">MBBS, … (add degrees, fellowships)</span>
+            </div></div>
+            <div class="card"><div class="p">
+              <strong class="h-serif">Memberships</strong><br>
+              <span class="sub">Royal college / national societies (add)</span>
+            </div></div>
+          </div>
+
+          <div style="margin-top:18px">
+            <div class="kicker">Career Milestones</div>
+            <div class="timeline">
+              <div class="titem"><div class="dot"></div><div><h4 class="h-serif" style="margin:0 0 6px">Milestone #1</h4><p>Year • Role • Institution</p></div></div>
+              <div class="titem"><div class="dot"></div><div><h4 class="h-serif" style="margin:0 0 6px">Milestone #2</h4><p>Year • Role • Institution</p></div></div>
+              <div class="titem"><div class="dot"></div><div><h4 class="h-serif" style="margin:0 0 6px">Milestone #3</h4><p>Year • Role • Institution</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="kicker">Contact</div>
+      <h2 class="title h-serif">Simple, inviting, responsive</h2>
+      <p class="sub">For appointments, collaborations, teaching requests, or questions.</p>
+
+      <div class="grid two" style="margin-top:18px; align-items:start">
+        <div class="card">
+          <div class="p">
+            <form>
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <input type="text" name="subject" placeholder="Subject">
+              <textarea name="message" placeholder="Your message" required></textarea>
+              <button class="btn primary" type="submit">Send Message</button>
+              <p style="margin:10px 0 0; color:var(--muted); font-size:.92rem">
+                (Connect this form to EmailJS / Formspree / your backend.)
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <div class="grid" style="gap:18px">
+          <div class="card"><div class="p">
+            <strong class="h-serif">Clinic Hours</strong><br>
+            <span class="sub">Add days/times + location.</span>
+          </div></div>
+
+          <div class="card"><div class="p">
+            <strong class="h-serif">Map</strong><br>
+            <span class="sub">Embed Google Map here (iframe) or place a link.</span>
+          </div></div>
+
+          <div class="card"><div class="p">
+            <strong class="h-serif">WhatsApp</strong><br>
+            <a class="btn" href="#" aria-label="WhatsApp link">Message on WhatsApp</a>
+            <p style="margin:10px 0 0; color:var(--muted); font-size:.92rem">Replace with your wa.me link.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <div>© <span id="year"></span> Dr. M. Quamrul Hassan</div>
+      <div>Warm premium theme • Playfair + Inter</div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Video tabs
+    const tabs = document.querySelectorAll('.tab');
+    const panels = {
+      parents: document.getElementById('tab-parents'),
+      students: document.getElementById('tab-students'),
+      doctors: document.getElementById('tab-doctors')
+    };
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+
+        Object.values(panels).forEach(p => p.style.display = 'none');
+        panels[btn.dataset.tab].style.display = 'grid';
+      });
+    });
+  </script>
+</body>
+</html>
