@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Dr M Quamrul Hassan</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Georgia, serif; background: #FFF8F0; color: #333; }
+    nav {
+      background: #2E7D32; padding: 14px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { color: white; font-size: 18px; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul li a { color: white; text-decoration: none; font-size: 14px; }
+    nav ul li a:hover { text-decoration: underline; }
+
+    .page-hero {
+      background: linear-gradient(135deg, #E8F5E9, #FFF8F0);
+      padding: 50px 40px; text-align: center;
+    }
+    .page-hero h1 { font-size: 36px; color: #1B5E20; margin-bottom: 8px; }
+    .page-hero p { font-size: 16px; color: #666; max-width: 650px; margin: 0 auto; line-height: 1.7; }
+
+    .content { max-width: 960px; margin: 0 auto; padding: 50px 40px; }
+
+    .section { margin-bottom: 50px; }
+    .section h2 {
+      font-size: 22px; color: #1B5E20;
+      border-left: 4px solid #2E7D32;
+      padding-left: 14px; margin-bottom: 20px;
+    }
+
+    /* Appointment banner */
+    .appt-banner {
+      background: #2E7D32; color: white;
+      border-radius: 14px; padding: 28px 36px;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 16px;
+      margin-bottom: 50px;
+    }
+    .appt-banner h3 { font-size: 20px; margin-bottom: 6px; }
+    .appt-banner p { font-size: 14px; opacity: 0.9; line-height: 1.6; }
+    .appt-number {
+      background: white; color: #1B5E20;
+      padding: 14px 28px; border-radius: 30px;
+      font-size: 22px; font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* Service cards grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .service-card {
+      background: white; border-radius: 12px;
+      padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 4px solid #2E7D32;
+    }
+    .service-card .icon { font-size: 32px; margin-bottom: 12px; }
+    .service-card h4 { font-size: 16px; color: #1B5E20; margin-bottom: 8px; }
+    .service-card p { font-size: 13px; color: #555; line-height: 1.7; }
+
+    /* Referral section */
+    .referral-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .referral-card {
+      background: white; border-radius: 10px;
+      padding: 16px; text-align: center;
+      border: 1px solid #C8E6C9;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .referral-card .icon { font-size: 26px; margin-bottom: 8px; }
+    .referral-card p { font-size: 13px; color: #444; line-height: 1.5; }
+
+    /* Rare disorders */
+    .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill {
+      background: #E8F5E9; color: #1B5E20;
+      padding: 8px 16px; border-radius: 20px;
+      font-size: 13px; border: 1px solid #C8E6C9;
+    }
+
+    /* Clinic info */
+    .clinic-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .clinic-card {
+      background: white; border-radius: 12px;
+      padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .clinic-card h4 { font-size: 15px; color: #1B5E20; margin-bottom: 10px; }
+    .clinic-card p { font-size: 14px; color: #555; line-height: 1.8; }
+
+    /* Notice box */
+    .notice {
+      background: #FFF9C4; border: 1px solid #F9A825;
+      border-radius: 10px; padding: 16px 20px;
+      font-size: 14px; color: #555; line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    footer {
+      background: #1B5E20; color: #ccc;
+      text-align: center; padding: 24px;
+      font-size: 13px; margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Dr M Q Hassan</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About & CV</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="parents.html">For Parents</a></li>
+      <li><a href="doctors.html">For Doctors</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Our Services</h1>
+    <p>Comprehensive paediatric and neonatal care for children from birth through adolescence,
+    at Evercare Hospital Dhaka</p>
+  </div>
+
+  <div class="content">
+
+    <!-- Appointment banner -->
+    <div class="appt-banner">
+      <div>
+        <h3>Book an Appointment</h3>
+        <p>Outpatient clinic runs Saturday to Thursday.<br>
+        Appointments managed through Evercare Hospital Call Centre.<br>
+        Walk-in consultations accommodated in unavoidable circumstances.</p>
+      </div>
+      <div class="appt-number">📞 16216</div>
+    </div>
+
+    <!-- Core services -->
+    <div class="section">
+      <h2>Outpatient Clinic Services</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="icon">🫁</div>
+          <h4>Respiratory Illnesses</h4>
+          <p>Diagnosis and management of Pneumonia, Asthma, bronchitis, recurrent respiratory infections and chronic lung conditions in children of all ages.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">👂</div>
+          <h4>Ear, Nose & Throat</h4>
+          <p>Assessment and management of Tonsil and Adenoid problems, recurrent ear infections, hearing concerns and ENT-related breathing difficulties.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🫃</div>
+          <h4>Gastrointestinal Disorders</h4>
+          <p>Acute and chronic digestive problems including gastroenteritis, constipation, abdominal pain, feeding difficulties and inflammatory bowel conditions.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🦠</div>
+          <h4>Infections & Allergies</h4>
+          <p>Management of childhood infections, fever assessments, food allergies, allergic rhinitis, eczema-related allergies and immune responses.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🦴</div>
+          <h4>Bone & Joint Problems</h4>
+          <p>Evaluation of limping, joint pain, swelling and musculoskeletal complaints in children including inflammatory and infectious conditions.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🌱</div>
+          <h4>Growth & Nutrition</h4>
+          <p>Comprehensive assessment and management of growth faltering, malnutrition, obesity, nutritional deficiencies and dietary counselling for children.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🧴</div>
+          <h4>Common Skin Conditions</h4>
+          <p>Diagnosis and treatment of eczema, urticaria, childhood rashes, fungal infections and other common dermatological conditions in children.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">👶</div>
+          <h4>Newborn Care</h4>
+          <p>Comprehensive assessment and management of newborn diseases both in outpatient clinic and inpatient settings. Expert neonatal consultations.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Inpatient & ICU -->
+    <div class="section">
+      <h2>Inpatient & Intensive Care</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon">🏥</div>
+          <h4>Paediatric ICU Care</h4>
+          <p>Excellent intensive care unit management for critically ill children. Close monitoring and expert treatment for severe and complex paediatric conditions requiring inpatient admission.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🔬</div>
+          <h4>Investigations</h4>
+          <p>All sorts of paediatric investigations are available at Evercare Hospital Dhaka — blood tests, imaging, microbiological studies, lung function tests and specialist diagnostics.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Referral services -->
+    <div class="section">
+      <h2>Specialist Referral Services</h2>
+      <p style="font-size:14px; color:#666; margin-bottom:16px; line-height:1.7;">
+        Through our network of specialist colleagues at Evercare Hospital,
+        we provide seamless referral pathways for conditions requiring subspecialty care:
+      </p>
+      <div class="referral-grid">
+        <div class="referral-card">
+          <div class="icon">⚗️</div>
+          <p>Hormone & Endocrine Disorders</p>
+        </div>
+        <div class="referral-card">
+          <div class="icon">🧠</div>
+          <p>Neurological Diseases</p>
+        </div>
+        <div class="referral-card">
+          <div class="icon">🧩</div>
+          <p>Developmental & Behavioural Problems</p>
+        </div>
+        <div class="referral-card">
+          <div class="icon">💡</div>
+          <p>ADHD & Autism Spectrum</p>
+        </div>
+        <div class="referral-card">
+          <div class="icon">🔧</div>
+          <p>Surgical Conditions</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rare disorders -->
+    <div class="section">
+      <h2>Rare & Complex Disorders</h2>
+      <p style="font-size:14px; color:#666; margin-bottom:16px; line-height:1.7;">
+        We see rare and complex disorders referred from all over Bangladesh,
+        including but not limited to:
+      </p>
+      <div class="pills">
+        <span class="pill">Kawasaki Disease</span>
+        <span class="pill">MIS-C</span>
+        <span class="pill">Autoimmune Diseases</span>
+        <span class="pill">Myasthenia Gravis</span>
+        <span class="pill">Rare Genetic Disorders</span>
+        <span class="pill">Complex Multi-system Disease</span>
+      </div>
+    </div>
+
+    <!-- Clinic info -->
+    <div class="section">
+      <h2>Clinic Information</h2>
+      <div class="clinic-grid">
+        <div class="clinic-card">
+          <h4>Clinic Hours</h4>
+          <p>
+            Saturday — Thursday<br>
+            Appointments required<br>
+            Walk-in accommodated in unavoidable circumstances
+          </p>
+        </div>
+        <div class="clinic-card">
+          <h4>Location</h4>
+          <p>
+            Evercare Hospital Dhaka<br>
+            Plot 81, Block E<br>
+            Bashundhara R/A, Dhaka 1229<br>
+            Bangladesh
+          </p>
+        </div>
+      </div>
+      <div class="notice">
+        This is a private practice. All consultations are by appointment through the
+        Evercare Hospital Call Centre. Please dial <strong>16216</strong> to book your appointment.
+        For medical emergencies please go directly to the Evercare Hospital Emergency Department.
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Dr M Quamrul Hassan — Senior Consultant Paediatrician & Neonatologist</p>
+    <p style="margin-top:6px;">Evercare Hospital Dhaka, Bangladesh</p>
+    <p style="margin-top:6px; font-size:11px;">This website is for information only and does not constitute medical advice.
+    For emergencies please go to your nearest hospital.</p>
+  </footer>
+
+</body>
+</html>
+```
+
+Save with `Ctrl+S` and close Notepad. Then preview:
+```
+start services.html
