@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — Dr M Quamrul Hassan</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Georgia, serif; background: #FFF8F0; color: #333; }
+    nav {
+      background: #2E7D32; padding: 14px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { color: white; font-size: 18px; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul li a { color: white; text-decoration: none; font-size: 14px; }
+    nav ul li a:hover { text-decoration: underline; }
+
+    .page-hero {
+      background: linear-gradient(135deg, #E8F5E9, #FFF8F0);
+      padding: 50px 40px; text-align: center;
+    }
+    .page-hero h1 { font-size: 36px; color: #1B5E20; margin-bottom: 10px; }
+    .page-hero p {
+      font-size: 16px; color: #555; max-width: 680px;
+      margin: 0 auto; line-height: 1.8;
+    }
+
+    .content { max-width: 960px; margin: 0 auto; padding: 50px 40px; }
+
+    .section { margin-bottom: 50px; }
+    .section h2 {
+      font-size: 22px; color: #1B5E20;
+      border-left: 4px solid #2E7D32;
+      padding-left: 14px; margin-bottom: 6px;
+    }
+    .section-intro {
+      font-size: 14px; color: #888;
+      margin-bottom: 20px; padding-left: 18px;
+      line-height: 1.7;
+    }
+
+    /* Telemedicine banner */
+    .tele-banner {
+      background: linear-gradient(135deg, #1B5E20, #2E7D32);
+      border-radius: 14px; padding: 28px 36px;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 16px;
+      margin-bottom: 50px; text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .tele-banner:hover { opacity: 0.92; }
+    .tele-banner h3 { font-size: 20px; color: white; margin-bottom: 6px; }
+    .tele-banner p { font-size: 14px; color: #C8E6C9; line-height: 1.6; }
+    .tele-btn {
+      background: white; color: #1B5E20;
+      padding: 12px 24px; border-radius: 30px;
+      font-size: 14px; font-weight: bold;
+      white-space: nowrap; text-decoration: none;
+    }
+
+    /* Resource cards */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .resource-card {
+      background: white; border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-left: 4px solid #2E7D32;
+      text-decoration: none; color: #333;
+      display: block; transition: transform 0.2s;
+    }
+    .resource-card:hover { transform: translateY(-3px); }
+    .resource-card .tag {
+      font-size: 11px; padding: 2px 8px;
+      border-radius: 10px; display: inline-block;
+      margin-bottom: 8px;
+    }
+    .tag-parent { background: #E8F5E9; color: #1B5E20; }
+    .tag-doctor { background: #E3F2FD; color: #1565C0; }
+    .tag-hospital { background: #FFF3E0; color: #E65100; }
+    .tag-guideline { background: #F3E5F5; color: #6A1B9A; }
+    .tag-research { background: #FCE4EC; color: #880E4F; }
+    .tag-both { background: #F1F8E9; color: #33691E; }
+    .resource-card h4 { font-size: 15px; color: #1B5E20; margin-bottom: 4px; }
+    .resource-card p { font-size: 13px; color: #666; line-height: 1.5; }
+    .resource-card .url {
+      font-size: 11px; color: #999; margin-top: 8px;
+      font-family: monospace; word-break: break-all;
+    }
+
+    /* Hospital section */
+    .hospital-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .hospital-card {
+      background: white; border-radius: 12px;
+      padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-top: 4px solid #FF8F00;
+      text-decoration: none; color: #333;
+      display: block; transition: transform 0.2s;
+    }
+    .hospital-card:hover { transform: translateY(-3px); }
+    .hospital-card .icon { font-size: 28px; margin-bottom: 10px; }
+    .hospital-card h4 { font-size: 15px; color: #E65100; margin-bottom: 6px; }
+    .hospital-card p { font-size: 13px; color: #666; line-height: 1.6; }
+    .hospital-card .link {
+      font-size: 12px; color: #2E7D32;
+      margin-top: 10px; display: block;
+    }
+
+    /* Disclaimer */
+    .notice {
+      background: #FFF9C4; border: 1px solid #F9A825;
+      border-radius: 10px; padding: 16px 20px;
+      font-size: 13px; color: #555; line-height: 1.7;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #1B5E20; color: #ccc;
+      text-align: center; padding: 24px;
+      font-size: 13px; margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Dr M Q Hassan</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About & CV</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="parents.html">For Parents</a></li>
+      <li><a href="doctors.html">For Doctors</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Resources</h1>
+    <p>A curated collection of trusted links for parents, doctors and
+    healthcare professionals — carefully selected by Dr M Quamrul Hassan</p>
+  </div>
+
+  <div class="content">
+
+    <!-- Telemedicine banner -->
+    <a href="https://ecare.evercarebd.com/" target="_blank" class="tele-banner">
+      <div>
+        <h3>Consult Dr Hassan Online</h3>
+        <p>Telemedicine consultations now available through Evercare eCare.<br>
+        See a paediatric specialist from the comfort of your home.</p>
+      </div>
+      <div class="tele-btn">Book Telemedicine →</div>
+    </a>
+
+    <!-- Evercare Hospitals -->
+    <div class="section">
+      <h2>Evercare Hospitals Bangladesh</h2>
+      <p class="section-intro">Where Dr Hassan practices — world-class healthcare in Bangladesh</p>
+      <div class="hospital-grid">
+        <a href="https://www.evercarebd.com/" target="_blank" class="hospital-card">
+          <div class="icon">🏥</div>
+          <h4>Evercare Hospital Dhaka</h4>
+          <p>Plot 81, Block E, Bashundhara R/A, Dhaka 1229.<br>
+          Dr Hassan's primary practice. Outpatient clinic Saturday to Thursday.</p>
+          <span class="link">evercarebd.com →</span>
+        </a>
+        <a href="https://www.evercarebd.com/evercare-hospital-chattogram/" target="_blank" class="hospital-card">
+          <div class="icon">🏥</div>
+          <h4>Evercare Hospital Chittagong</h4>
+          <p>World-class tertiary care hospital serving the Chittagong division and surrounding regions of Bangladesh.</p>
+          <span class="link">evercarebd.com →</span>
+        </a>
+        <a href="https://ecare.evercarebd.com/" target="_blank" class="hospital-card">
+          <div class="icon">💻</div>
+          <h4>Evercare eCare — Telemedicine</h4>
+          <p>Online consultations with Dr Hassan and other Evercare specialists. Available for patients across Bangladesh and internationally.</p>
+          <span class="link">ecare.evercarebd.com →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- For Parents -->
+    <div class="section">
+      <h2>For Parents</h2>
+      <p class="section-intro">Trusted, reliable health information for families — reviewed and recommended by Dr Hassan</p>
+      <div class="resource-grid">
+
+        <a href="https://www.who.int/health-topics/child-health" target="_blank" class="resource-card">
+          <span class="tag tag-parent">For parents</span>
+          <h4>WHO — Child Health</h4>
+          <p>World Health Organization guidance on child health, nutrition, development and disease prevention.</p>
+          <div class="url">who.int/health-topics/child-health</div>
+        </a>
+
+        <a href="https://www.unicef.org/parenting" target="_blank" class="resource-card">
+          <span class="tag tag-parent">For parents</span>
+          <h4>UNICEF Parenting</h4>
+          <p>Evidence-based parenting guides covering newborn care, feeding, development, vaccination and positive parenting.</p>
+          <div class="url">unicef.org/parenting</div>
+        </a>
+
+        <a href="https://www.nhs.uk/conditions/baby/" target="_blank" class="resource-card">
+          <span class="tag tag-parent">For parents</span>
+          <h4>NHS — Baby & Child Health</h4>
+          <p>Comprehensive, plain-language health information for parents from the UK National Health Service.</p>
+          <div class="url">nhs.uk/conditions/baby</div>
+        </a>
+
+        <a href="https://www.healthychildren.org" target="_blank" class="resource-card">
+          <span class="tag tag-parent">For parents</span>
+          <h4>HealthyChildren.org — AAP</h4>
+          <p>Official parenting website of the American Academy of Pediatrics. Covers all aspects of child health from birth to adolescence.</p>
+          <div class="url">healthychildren.org</div>
+        </a>
+
+        <a href="https://www.cdc.gov/parents/children/index.html" target="_blank" class="resource-card">
+          <span class="tag tag-parent">For parents</span>
+          <h4>CDC — Child Development</h4>
+          <p>US Centers for Disease Control information on developmental milestones, vaccinations and child safety.</p>
+          <div class="url">cdc.gov/parents/children</div>
+        </a>
+
+        <a href="https://www.dgda.gov.bd/" target="_blank" class="resource-card">
+          <span class="tag tag-parent">Bangladesh</span>
+          <h4>DGDA Bangladesh</h4>
+          <p>Directorate General of Drug Administration Bangladesh — official information on approved medicines and health products.</p>
+          <div class="url">dgda.gov.bd</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- For Doctors -->
+    <div class="section">
+      <h2>For Doctors & Healthcare Professionals</h2>
+      <p class="section-intro">Clinical guidelines, research resources and professional references</p>
+      <div class="resource-grid">
+
+        <a href="https://www.nice.org.uk/guidance/conditions-and-diseases/children-and-young-people" target="_blank" class="resource-card">
+          <span class="tag tag-guideline">Guidelines</span>
+          <h4>NICE — Paediatric Guidelines</h4>
+          <p>National Institute for Health and Care Excellence clinical guidelines for children and young people. Internationally respected evidence-based guidance.</p>
+          <div class="url">nice.org.uk</div>
+        </a>
+
+        <a href="https://www.rcpch.ac.uk/" target="_blank" class="resource-card">
+          <span class="tag tag-doctor">Professional</span>
+          <h4>RCPCH</h4>
+          <p>Royal College of Paediatrics and Child Health — clinical standards, growth charts, training resources and paediatric guidelines.</p>
+          <div class="url">rcpch.ac.uk</div>
+        </a>
+
+        <a href="https://www.aap.org/" target="_blank" class="resource-card">
+          <span class="tag tag-doctor">Professional</span>
+          <h4>American Academy of Pediatrics</h4>
+          <p>AAP clinical practice guidelines, policy statements and paediatric research. One of the world's leading paediatric professional bodies.</p>
+          <div class="url">aap.org</div>
+        </a>
+
+        <a href="https://bnfc.nice.org.uk/" target="_blank" class="resource-card">
+          <span class="tag tag-guideline">Drug reference</span>
+          <h4>BNF for Children</h4>
+          <p>British National Formulary for Children — essential drug dosing reference for paediatric prescribers.</p>
+          <div class="url">bnfc.nice.org.uk</div>
+        </a>
+
+        <a href="https://www.who.int/teams/maternal-newborn-child-adolescent-health-and-ageing" target="_blank" class="resource-card">
+          <span class="tag tag-guideline">Guidelines</span>
+          <h4>WHO — Child & Adolescent Health</h4>
+          <p>WHO clinical guidelines, IMCI protocols and global child health standards for healthcare providers.</p>
+          <div class="url">who.int</div>
+        </a>
+
+        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" class="resource-card">
+          <span class="tag tag-research">Research</span>
+          <h4>PubMed</h4>
+          <p>National Library of Medicine database of biomedical literature. Essential for evidence-based practice and research.</p>
+          <div class="url">pubmed.ncbi.nlm.nih.gov</div>
+        </a>
+
+        <a href="https://www.cochranelibrary.com/" target="_blank" class="resource-card">
+          <span class="tag tag-research">Research</span>
+          <h4>Cochrane Library</h4>
+          <p>High-quality systematic reviews and meta-analyses. The gold standard for evidence-based medicine.</p>
+          <div class="url">cochranelibrary.com</div>
+        </a>
+
+        <a href="https://www.bangladeshpediatric.org/" target="_blank" class="resource-card">
+          <span class="tag tag-doctor">Bangladesh</span>
+          <h4>Bangladesh Paediatric Association</h4>
+          <p>Professional body for paediatricians in Bangladesh. National guidelines, conferences and continuing medical education.</p>
+          <div class="url">bangladeshpediatric.org</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Vaccination -->
+    <div class="section">
+      <h2>Vaccination Resources</h2>
+      <p class="section-intro">Official vaccination schedules and immunisation information</p>
+      <div class="resource-grid">
+
+        <a href="https://www.mohfw.gov.bd/" target="_blank" class="resource-card">
+          <span class="tag tag-both">Bangladesh</span>
+          <h4>Bangladesh Ministry of Health</h4>
+          <p>Official vaccination schedule for Bangladesh, EPI programme information and national health guidelines.</p>
+          <div class="url">mohfw.gov.bd</div>
+        </a>
+
+        <a href="https://www.who.int/teams/immunization-vaccines-and-biologicals" target="_blank" class="resource-card">
+          <span class="tag tag-both">International</span>
+          <h4>WHO Immunization</h4>
+          <p>Global vaccination guidelines, vaccine safety information and immunisation schedules from the World Health Organization.</p>
+          <div class="url">who.int/immunization</div>
+        </a>
+
+        <a href="https://www.cdc.gov/vaccines/schedules/" target="_blank" class="resource-card">
+          <span class="tag tag-both">International</span>
+          <h4>CDC Vaccine Schedules</h4>
+          <p>Recommended immunisation schedules for children and adolescents from the US Centers for Disease Control.</p>
+          <div class="url">cdc.gov/vaccines/schedules</div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="notice">
+      External links on this page are provided for information only. Dr M Quamrul Hassan
+      is not responsible for the content of external websites. Always consult a qualified
+      healthcare professional for medical advice specific to your child.
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Dr M Quamrul Hassan — Senior Consultant Paediatrician & Neonatologist</p>
+    <p style="margin-top:6px;">Evercare Hospital Dhaka, Bangladesh</p>
+    <p style="margin-top:6px; font-size:11px;">This website is for information only and does not constitute medical advice.</p>
+  </footer>
+
+</body>
+</html>
+```
+
+Save with `Ctrl+S` and close Notepad. Then preview:
+```
+start resources.html
