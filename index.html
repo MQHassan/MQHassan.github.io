@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr M Quamrul Hassan — Consultant Paediatrician</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Georgia, serif; background: #FFF8F0; color: #333; }
+
+    /* Navigation */
+    nav {
+      background: #2E7D32;
+      padding: 14px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    nav ul li a:hover { text-decoration: underline; }
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(135deg, #E8F5E9, #FFF8F0);
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 42px;
+      color: #1B5E20;
+      margin-bottom: 10px;
+    }
+    .hero h2 {
+      font-size: 22px;
+      color: #2E7D32;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+    .hero .hospital {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+    .btn {
+      background: #2E7D32;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 0 8px;
+      display: inline-block;
+    }
+    .btn-outline {
+      background: transparent;
+      color: #2E7D32;
+      border: 2px solid #2E7D32;
+      padding: 12px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 0 8px;
+      display: inline-block;
+    }
+
+    /* Quick links */
+    .quick-links {
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .quick-links h3 {
+      font-size: 28px;
+      color: #1B5E20;
+      margin-bottom: 36px;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 28px 24px;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card .icon { font-size: 36px; margin-bottom: 12px; }
+    .card h4 { font-size: 15px; color: #1B5E20; margin-bottom: 6px; }
+    .card p { font-size: 13px; color: #666; line-height: 1.5; }
+
+    /* Footer */
+    footer {
+      background: #1B5E20;
+      color: #ccc;
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+    }
+    footer a { color: #A5D6A7; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Dr M Q Hassan</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About & CV</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="parents.html">For Parents</a></li>
+      <li><a href="doctors.html">For Doctors</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Dr M Quamrul Hassan</h1>
+    <h2>MBBS, FCPS (Paediatrics)</h2>
+    <p class="hospital">Senior Consultant — Paediatrics & Neonatology | Evercare Hospital Dhaka</p>
+    <p>
+      Dedicated to the health and wellbeing of children and newborns.
+      Providing compassionate, expert paediatric care in Bangladesh since 1992.
+    </p>
+    <a href="contact.html" class="btn">Book an Appointment</a>
+    <a href="about.html" class="btn-outline">About Me</a>
+  </div>
+
+  <!-- Quick links -->
+  <div class="quick-links">
+    <h3>How can I help you today?</h3>
+    <div class="cards">
+      <a href="parents.html" class="card">
+        <div class="icon">👨‍👩‍👧</div>
+        <h4>For Parents</h4>
+        <p>Health guides, videos and advice for your child</p>
+      </a>
+      <a href="doctors.html" class="card">
+        <div class="icon">🩺</div>
+        <h4>For Doctors</h4>
+        <p>Teaching materials, case studies and resources</p>
+      </a>
+      <a href="services.html" class="card">
+        <div class="icon">🏥</div>
+        <h4>Services</h4>
+        <p>Outpatient clinic, neonatal care and consultations</p>
+      </a>
+      <a href="resources.html" class="card">
+        <div class="icon">📚</div>
+        <h4>Resources</h4>
+        <p>Trusted links for parents and medical professionals</p>
+      </a>
+      <a href="about.html" class="card">
+        <div class="icon">📋</div>
+        <h4>About & CV</h4>
+        <p>Qualifications, experience and publications</p>
+      </a>
+      <a href="contact.html" class="card">
+        <div class="icon">📞</div>
+        <h4>Contact</h4>
+        <p>Clinic hours and appointment details</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Dr M Quamrul Hassan — Senior Consultant Paediatrician & Neonatologist</p>
+    <p style="margin-top:6px;">Evercare Hospital Dhaka, Bangladesh</p>
+    <p style="margin-top:6px; font-size:11px;">
+      This website is for information only and does not constitute medical advice.
+      For emergencies please call your nearest hospital.
+    </p>
+  </footer>
+
+</body>
+</html>
