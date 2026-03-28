@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Parents — Dr M Quamrul Hassan</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Georgia, serif; background: #FFF8F0; color: #333; }
+    nav {
+      background: #2E7D32; padding: 14px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { color: white; font-size: 18px; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul li a { color: white; text-decoration: none; font-size: 14px; }
+    nav ul li a:hover { text-decoration: underline; }
+
+    .page-hero {
+      background: linear-gradient(135deg, #E8F5E9, #FFF8F0);
+      padding: 50px 40px; text-align: center;
+    }
+    .page-hero h1 { font-size: 36px; color: #1B5E20; margin-bottom: 10px; }
+    .page-hero p {
+      font-size: 17px; color: #555; max-width: 680px;
+      margin: 0 auto; line-height: 1.8;
+    }
+
+    .content { max-width: 960px; margin: 0 auto; padding: 50px 40px; }
+
+    .section { margin-bottom: 56px; }
+    .section h2 {
+      font-size: 22px; color: #1B5E20;
+      border-left: 4px solid #2E7D32;
+      padding-left: 14px; margin-bottom: 20px;
+    }
+
+    /* Topic cards */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+    }
+    .topic-card {
+      background: white; border-radius: 12px;
+      padding: 20px 16px; text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      cursor: pointer; transition: transform 0.2s;
+      border-bottom: 3px solid #2E7D32;
+      text-decoration: none; color: #333;
+    }
+    .topic-card:hover { transform: translateY(-3px); }
+    .topic-card .icon { font-size: 30px; margin-bottom: 10px; }
+    .topic-card h4 { font-size: 14px; color: #1B5E20; font-weight: bold; }
+    .topic-card p { font-size: 12px; color: #888; margin-top: 4px; line-height: 1.4; }
+
+    /* Topic detail boxes */
+    .topic-detail {
+      background: white; border-radius: 12px;
+      padding: 24px 28px; margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-left: 5px solid #2E7D32;
+    }
+    .topic-detail h3 { font-size: 18px; color: #1B5E20; margin-bottom: 10px; }
+    .topic-detail p { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 10px; }
+    .topic-detail .when-worry {
+      background: #FFF3E0; border-left: 4px solid #FF9800;
+      padding: 12px 16px; border-radius: 6px;
+      font-size: 13px; color: #555; line-height: 1.7;
+    }
+    .topic-detail .when-worry strong { color: #E65100; }
+
+    /* FAQ */
+    .faq-item {
+      background: white; border-radius: 10px;
+      margin-bottom: 10px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .faq-q {
+      padding: 16px 20px; font-size: 15px;
+      color: #1B5E20; font-weight: bold; cursor: pointer;
+      display: flex; justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q:hover { background: #F1F8F1; }
+    .faq-a {
+      padding: 0 20px 16px; font-size: 14px;
+      color: #555; line-height: 1.8; display: none;
+    }
+    .faq-a.open { display: block; }
+
+    /* Videos */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .video-container {
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .video-container iframe {
+      width: 100%; height: 200px; border: none; display: block;
+    }
+    .video-label {
+      background: white; padding: 12px 14px;
+      font-size: 13px; color: #444; line-height: 1.5;
+    }
+
+    /* Tools */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .tool-card {
+      background: white; border-radius: 12px;
+      padding: 22px; text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 4px solid #2E7D32;
+    }
+    .tool-card .icon { font-size: 36px; margin-bottom: 12px; }
+    .tool-card h4 { font-size: 15px; color: #1B5E20; margin-bottom: 6px; }
+    .tool-card p { font-size: 13px; color: #666; margin-bottom: 14px; line-height: 1.5; }
+    .tool-btn {
+      background: #2E7D32; color: white;
+      padding: 8px 20px; border-radius: 20px;
+      text-decoration: none; font-size: 13px;
+      display: inline-block;
+    }
+    .placeholder-tool {
+      background: #F9FBF9; border: 1px dashed #A5D6A7;
+      border-radius: 6px; padding: 10px;
+      font-size: 12px; color: #999; font-style: italic;
+    }
+
+    /* Success stories */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .story-card {
+      background: white; border-radius: 12px;
+      padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 4px solid #FF8F00;
+    }
+    .story-card .tag {
+      font-size: 11px; background: #FFF3E0;
+      color: #E65100; padding: 3px 10px;
+      border-radius: 10px; display: inline-block;
+      margin-bottom: 10px;
+    }
+    .story-card h4 { font-size: 15px; color: #333; margin-bottom: 8px; }
+    .story-card p { font-size: 13px; color: #666; line-height: 1.7; margin-bottom: 12px; }
+    .story-card a {
+      font-size: 13px; color: #2E7D32;
+      text-decoration: none; font-weight: bold;
+    }
+
+    /* Notice */
+    .notice {
+      background: #FFF9C4; border: 1px solid #F9A825;
+      border-radius: 10px; padding: 16px 20px;
+      font-size: 14px; color: #555; line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    footer {
+      background: #1B5E20; color: #ccc;
+      text-align: center; padding: 24px;
+      font-size: 13px; margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Dr M Q Hassan</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About & CV</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="parents.html">For Parents</a></li>
+      <li><a href="doctors.html">For Doctors</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>For Parents</h1>
+    <p>You know your child best. We are here to support you with clear,
+    honest and reassuring information — so you can make the best decisions
+    for your child's health and wellbeing.</p>
+  </div>
+
+  <div class="content">
+
+    <!-- Health Topics Overview -->
+    <div class="section">
+      <h2>Common Health Topics</h2>
+      <div class="topics-grid">
+        <div class="topic-card">
+          <div class="icon">🌡️</div>
+          <h4>Fever</h4>
+          <p>When to worry, when to wait</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">😮‍💨</div>
+          <h4>Cough</h4>
+          <p>Types, causes and care</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">🚽</div>
+          <h4>Diarrhoea</h4>
+          <p>Managing dehydration safely</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">🔴</div>
+          <h4>Rashes</h4>
+          <p>Common and serious rashes</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">🤢</div>
+          <h4>Tummy Pain</h4>
+          <p>Causes and red flags</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">🦵</div>
+          <h4>Limping</h4>
+          <p>When limping needs attention</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">⚡</div>
+          <h4>Convulsion</h4>
+          <p>What to do during a seizure</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">📏</div>
+          <h4>Not Growing Well</h4>
+          <p>Growth assessment and support</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">🍽️</div>
+          <h4>Not Eating</h4>
+          <p>Feeding difficulties in children</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">📊</div>
+          <h4>Growth Parameters</h4>
+          <p>Height, weight and head circumference</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">🧠</div>
+          <h4>Development</h4>
+          <p>Milestones from birth to school</p>
+        </div>
+        <div class="topic-card">
+          <div class="icon">👶</div>
+          <h4>Newborn Care</h4>
+          <p>First weeks at home</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topic detail: Fever -->
+    <div class="section">
+      <h2>Understanding Fever</h2>
+      <div class="topic-detail">
+        <h3>🌡️ What is fever and why does it happen?</h3>
+        <p>Fever is a body temperature above 38°C (100.4°F). It is not a disease — it is your child's immune system fighting an infection. Most fevers in children are caused by viral infections and will settle on their own within 3 to 5 days.</p>
+        <p>Giving paracetamol or ibuprofen helps your child feel more comfortable but does not treat the underlying cause. Keep your child well hydrated and comfortable.</p>
+        <div class="when-worry">
+          <strong>⚠️ Seek immediate medical attention if your child has fever AND:</strong><br>
+          • Is under 3 months old with any fever<br>
+          • Has a rash that does not fade when pressed<br>
+          • Is unusually drowsy, floppy or difficult to wake<br>
+          • Has a febrile convulsion (fit)<br>
+          • Has difficulty breathing<br>
+          • Fever lasts more than 5 days
+        </div>
+      </div>
+
+      <!-- FAQ: Fever -->
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          My child has a fever of 39°C. Should I go to hospital immediately? <span>+</span>
+        </div>
+        <div class="faq-a">
+          Not necessarily. A temperature of 39°C in an otherwise alert, playful child who is drinking fluids is usually manageable at home with paracetamol and plenty of fluids. Watch for the warning signs above. If in doubt, call your doctor.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Should I alternate paracetamol and ibuprofen? <span>+</span>
+        </div>
+        <div class="faq-a">
+          You can use paracetamol and ibuprofen separately following the correct doses and intervals for each. Alternating can be helpful if one alone is not controlling discomfort. Always follow the dosing instructions carefully and consult your doctor if unsure.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can fever cause brain damage? <span>+</span>
+        </div>
+        <div class="faq-a">
+          Fever itself — even a high fever — does not cause brain damage. The rare risk of brain injury comes from the underlying cause of the fever, such as meningitis, not from the fever itself. Febrile convulsions, while frightening, are also generally harmless and do not cause brain damage.
+        </div>
+      </div>
+    </div>
+
+    <!-- Common care topics -->
+    <div class="section">
+      <h2>Common Care Guides</h2>
+      <div class="topic-detail">
+        <h3>👶 Newborn Care — The First Weeks</h3>
+        <p>Bringing a newborn home is one of life's most joyful and sometimes overwhelming experiences. Your baby will sleep 16 to 18 hours a day, feed every 2 to 3 hours and communicate entirely through crying in the early weeks. This is all completely normal.</p>
+        <p>Breastfeeding is the best nutrition for your baby for the first 6 months. If breastfeeding is difficult, please seek support early — it almost always gets better with the right help.</p>
+      </div>
+      <div class="topic-detail">
+        <h3>💉 Vaccination — Protecting Your Child</h3>
+        <p>Vaccines are one of the most effective ways to protect your child from serious diseases. Following the recommended vaccination schedule gives your child the best protection at the right time. Mild reactions like a sore arm or low-grade fever after vaccination are normal and settle within 1 to 2 days.</p>
+        <div class="when-worry">
+          <strong>✅ Positive Parenting tip:</strong><br>
+          Respond to your child's needs warmly and consistently. Children who feel secure and loved develop better emotionally, socially and even physically. Your presence and attention are the most powerful tools you have.
+        </div>
+      </div>
+    </div>
+
+    <!-- Videos -->
+    <div class="section">
+      <h2>Educational Videos</h2>
+      <div class="video-grid">
+        <div class="video-container">
+          <a href="https://www.youtube.com/watch?v=Ru4CDO-boeA" target="_blank"
+            style="display:block; background:#1a1a1a; height:200px; display:flex; align-items:center; justify-content:center; text-decoration:none;">
+            <div style="text-align:center; color:white;">
+              <div style="font-size:50px;">▶</div>
+              <div style="font-size:13px; margin-top:8px;">Watch on YouTube</div>
+            </div>
+          </a>
+          <div class="video-label">Health education video for parents</div>
+        </div>
+        <div class="video-container">
+          <a href="https://www.youtube.com/watch?v=wFpxkJ_7a24" target="_blank"
+            style="display:block; background:#1a1a1a; height:200px; display:flex; align-items:center; justify-content:center; text-decoration:none;">
+            <div style="text-align:center; color:white;">
+              <div style="font-size:50px;">▶</div>
+              <div style="font-size:13px; margin-top:8px;">Watch on YouTube</div>
+            </div>
+          </a>
+          <div class="video-label">Health education video for parents</div>
+        </div>
+        <div class="video-container" style="background:#F1F8F1; display:flex; align-items:center; justify-content:center; height:200px; border-radius:12px; border: 1px dashed #A5D6A7;">
+          <div style="text-align:center; color:#888; font-size:13px; font-style:italic; padding:20px;">
+            [Video placeholder — add your next YouTube link here]
+          </div>
+        </div>
+        <div class="video-container" style="background:#F1F8F1; display:flex; align-items:center; justify-content:center; height:200px; border-radius:12px; border: 1px dashed #A5D6A7;">
+          <div style="text-align:center; color:#888; font-size:13px; font-style:italic; padding:20px;">
+            [Video placeholder — add your next YouTube link here]
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="section">
+      <h2>Useful Tools for Parents</h2>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="icon">📏</div>
+          <h4>Height & Weight Chart</h4>
+          <p>Check if your child's growth is on track for their age</p>
+          <div class="placeholder-tool">[Interactive growth chart — coming soon]</div>
+        </div>
+        <div class="tool-card">
+          <div class="icon">💉</div>
+          <h4>Vaccine Schedule</h4>
+          <p>Age-by-age vaccination guide for Bangladesh</p>
+          <div class="placeholder-tool">[Vaccine schedule tool — coming soon]</div>
+        </div>
+        <div class="tool-card">
+          <div class="icon">🧠</div>
+          <h4>Development Milestones</h4>
+          <p>What to expect at each stage of your child's development</p>
+          <div class="placeholder-tool">[Milestone checker — coming soon]</div>
+        </div>
+        <div class="tool-card">
+          <div class="icon">🌡️</div>
+          <h4>Fever Guide</h4>
+          <p>When to manage at home and when to see a doctor</p>
+          <div class="placeholder-tool">[Fever decision guide — coming soon]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success stories -->
+    <div class="section">
+      <h2>Success Stories</h2>
+      <p style="font-size:14px; color:#666; margin-bottom:20px; line-height:1.7;">
+        Every child is unique. Here are some of the cases that remind us why
+        paediatric medicine is such a privilege.
+      </p>
+      <div class="stories-grid">
+        <div class="story-card">
+          <span class="tag">Critical Care</span>
+          <h4>Severe Dengue — A Race Against Time</h4>
+          <p>[Placeholder — a reassuring story of a child with severe dengue who recovered fully with timely expert care. Include age, presenting symptoms briefly, outcome.]</p>
+          <a href="#">Read full story →</a>
+        </div>
+        <div class="story-card">
+          <span class="tag">ENT</span>
+          <h4>Gross Adenoids — Avoiding Unnecessary Surgery</h4>
+          <p>[Placeholder — a child listed for adenoid surgery who was successfully managed medically, avoiding the operation entirely with the right treatment approach.]</p>
+          <a href="#">Read full story →</a>
+        </div>
+        <div class="story-card">
+          <span class="tag">Neonatology</span>
+          <h4>Newborn Diagnosed with Heart Disease</h4>
+          <p>[Placeholder — a newborn picked up to have a heart condition during routine neonatal examination. Early diagnosis led to timely referral and successful treatment.]</p>
+          <a href="#">Read full story →</a>
+        </div>
+        <div class="story-card">
+          <span class="tag">Rare Disease</span>
+          <h4>Kawasaki Disease — Spotted Early</h4>
+          <p>[Placeholder — a child with prolonged fever referred from another centre, correctly diagnosed with Kawasaki disease and treated before cardiac complications developed.]</p>
+          <a href="#">Read full story →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice">
+      The information on this page is for general educational purposes only and does not
+      replace professional medical advice. If you are concerned about your child's health,
+      please consult a doctor. For emergencies go directly to your nearest hospital
+      emergency department or call for emergency services.
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Dr M Quamrul Hassan — Senior Consultant Paediatrician & Neonatologist</p>
+    <p style="margin-top:6px;">Evercare Hospital Dhaka, Bangladesh</p>
+    <p style="margin-top:6px; font-size:11px;">This website is for information only and does not constitute medical advice.</p>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      const answer = el.nextElementSibling;
+      const sign = el.querySelector('span');
+      answer.classList.toggle('open');
+      sign.textContent = answer.classList.contains('open') ? '−' : '+';
+    }
+  </script>
+
+</body>
+</html>
+```
+
+Save with `Ctrl+S` and close Notepad. Then preview:
+```
+start parents.html
