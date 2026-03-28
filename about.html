@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About & CV — Dr M Quamrul Hassan</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Georgia, serif; background: #FFF8F0; color: #333; }
+    nav {
+      background: #2E7D32; padding: 14px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { color: white; font-size: 18px; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul li a { color: white; text-decoration: none; font-size: 14px; }
+    nav ul li a:hover { text-decoration: underline; }
+
+    .page-hero {
+      background: linear-gradient(135deg, #E8F5E9, #FFF8F0);
+      padding: 50px 40px; text-align: center;
+    }
+    .page-hero h1 { font-size: 36px; color: #1B5E20; margin-bottom: 8px; }
+    .page-hero p { font-size: 16px; color: #666; }
+
+    .content { max-width: 900px; margin: 0 auto; padding: 50px 40px; }
+
+    .section { margin-bottom: 48px; }
+    .section h2 {
+      font-size: 22px; color: #1B5E20;
+      border-left: 4px solid #2E7D32;
+      padding-left: 14px; margin-bottom: 20px;
+    }
+
+    /* Qualifications */
+    .qual-list { list-style: none; }
+    .qual-list li {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 12px 0; border-bottom: 0.5px solid #E0E0E0;
+    }
+    .qual-year {
+      font-size: 13px; color: white; background: #2E7D32;
+      padding: 4px 10px; border-radius: 20px;
+      white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+    }
+    .qual-text { font-size: 15px; color: #333; line-height: 1.6; }
+    .qual-text span { display: block; font-size: 13px; color: #888; margin-top: 2px; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 6px; top: 0; bottom: 0;
+      width: 2px; background: #C8E6C9;
+    }
+    .timeline-item { position: relative; margin-bottom: 24px; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -24px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #2E7D32; border: 2px solid white;
+      box-shadow: 0 0 0 2px #2E7D32;
+    }
+    .timeline-item h4 { font-size: 15px; color: #1B5E20; margin-bottom: 4px; }
+    .timeline-item p { font-size: 13px; color: #666; line-height: 1.6; }
+
+    /* Training grid */
+    .training-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .training-card {
+      background: white; border-radius: 10px; padding: 16px;
+      border-left: 4px solid #2E7D32;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .training-card h4 { font-size: 14px; color: #1B5E20; margin-bottom: 4px; }
+    .training-card p { font-size: 13px; color: #666; line-height: 1.5; }
+
+    /* Interests pills */
+    .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill {
+      background: #E8F5E9; color: #1B5E20;
+      padding: 8px 16px; border-radius: 20px;
+      font-size: 13px; border: 1px solid #C8E6C9;
+    }
+
+    /* Publications placeholder */
+    .placeholder {
+      background: #F9FBF9; border: 1px dashed #A5D6A7;
+      border-radius: 10px; padding: 20px 24px;
+      color: #888; font-size: 14px; line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* Memberships */
+    .membership-list { list-style: none; }
+    .membership-list li {
+      padding: 10px 0; border-bottom: 0.5px solid #E0E0E0;
+      font-size: 15px; color: #333; display: flex; gap: 10px;
+    }
+    .membership-list li::before { content: '✓'; color: #2E7D32; font-weight: bold; }
+
+    footer {
+      background: #1B5E20; color: #ccc;
+      text-align: center; padding: 24px; font-size: 13px; margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Dr M Q Hassan</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About & CV</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="parents.html">For Parents</a></li>
+      <li><a href="doctors.html">For Doctors</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>About Me & CV</h1>
+    <p>Over three decades of paediatric and neonatal practice in Bangladesh and beyond</p>
+  </div>
+
+  <div class="content">
+
+    <!-- Qualifications -->
+    <div class="section">
+      <h2>Qualifications</h2>
+      <ul class="qual-list">
+        <li>
+          <span class="qual-year">1992</span>
+          <div class="qual-text">FCPS (Paediatrics)
+            <span>Bangladesh College of Physicians and Surgeons</span>
+          </div>
+        </li>
+        <li>
+          <span class="qual-year">1987</span>
+          <div class="qual-text">MBBS
+            <span>Chattogram Medical College</span>
+          </div>
+        </li>
+        <li>
+          <span class="qual-year">1980</span>
+          <div class="qual-text">HSC
+            <span>Chattogram College</span>
+          </div>
+        </li>
+        <li>
+          <span class="qual-year">1978</span>
+          <div class="qual-text">SSC
+            <span>Chattogram</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Career Timeline -->
+    <div class="section">
+      <h2>Career Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>Senior Consultant — Paediatrics & Neonatology</h4>
+          <p>Evercare Hospital Dhaka, Bangladesh · 2006 — Present<br>
+          Outpatient clinic Saturday to Thursday. Appointments managed by the hospital.</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Assistant Professor</h4>
+          <p>Institute of Child and Mother Health (ICMH), Dhaka</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Postgraduate Study</h4>
+          <p>IPGM&R, Bangabandhu Sheikh Mujib Medical University (BSMMU), Dhaka</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Assistant Registrar</h4>
+          <p>Rangpur Medical College Hospital</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Medical Officer</h4>
+          <p>Ramgor, Khagrachhari</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- International Training -->
+    <div class="section">
+      <h2>International Training</h2>
+      <div class="training-grid">
+        <div class="training-card">
+          <h4>Institute of Child Health</h4>
+          <p>London, United Kingdom</p>
+        </div>
+        <div class="training-card">
+          <h4>Hammersmith Hospital</h4>
+          <p>London, United Kingdom</p>
+        </div>
+        <div class="training-card">
+          <h4>Aga Khan University Hospital</h4>
+          <p>Karachi, Pakistan</p>
+        </div>
+        <div class="training-card">
+          <h4>Clinical Observer — Good Hope Hospital</h4>
+          <p>Birmingham, United Kingdom</p>
+        </div>
+        <div class="training-card">
+          <h4>Community Paediatrics</h4>
+          <p>Solihull, Birmingham, United Kingdom</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Special Interests -->
+    <div class="section">
+      <h2>Special Training & Clinical Interests</h2>
+      <div class="pills">
+        <span class="pill">Respiratory Paediatrics</span>
+        <span class="pill">Paediatric ENT</span>
+        <span class="pill">Neonatology</span>
+        <span class="pill">Paediatric Intensive Care</span>
+        <span class="pill">Paediatric Nutrition</span>
+        <span class="pill">Early Childhood Development</span>
+        <span class="pill">Epidemiology</span>
+        <span class="pill">Biostatistics</span>
+        <span class="pill">Research Methodology</span>
+        <span class="pill">Communication & Counselling</span>
+      </div>
+    </div>
+
+    <!-- Research & Publications -->
+    <div class="section">
+      <h2>Research & Publications</h2>
+      <div class="placeholder">
+        [Publication 1 — Title, Journal Name, Year]<br>
+        [Publication 2 — Title, Journal Name, Year]<br>
+        [Publication 3 — Title, Journal Name, Year]<br>
+        [Publication 4 — Title, Journal Name, Year]<br>
+        [Publication 5 — Title, Journal Name, Year]<br>
+        [Publication 6 — Title, Journal Name, Year]<br>
+        [Publication 7 — Title, Journal Name, Year]<br>
+        [Publication 8 — Title, Journal Name, Year]<br>
+        — Replace these placeholders with your actual publications —
+      </div>
+    </div>
+
+    <!-- Memberships -->
+    <div class="section">
+      <h2>Professional Memberships</h2>
+      <ul class="membership-list">
+        <li>Bangladesh Paediatric Association</li>
+        <li>American Academy of Pediatrics</li>
+      </ul>
+    </div>
+
+    <!-- Administrative Roles -->
+    <div class="section">
+      <h2>Administrative & Leadership Roles</h2>
+      <div class="placeholder">
+        [Leadership role 1 — Position, Organisation, Year]<br>
+        [Leadership role 2 — Position, Organisation, Year]<br>
+        [Leadership role 3 — Position, Organisation, Year]<br>
+        [Leadership role 4 — Position, Organisation, Year]<br>
+        — Replace these placeholders with your actual roles —
+      </div>
+    </div>
+
+    <!-- Awards -->
+    <div class="section">
+      <h2>Awards & Recognition</h2>
+      <div class="placeholder">
+        [Award 1 — Name, Organisation, Year]<br>
+        [Award 2 — Name, Organisation, Year]<br>
+        [Award 3 — Name, Organisation, Year]<br>
+        — Replace these placeholders with your actual awards —
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Dr M Quamrul Hassan — Senior Consultant Paediatrician & Neonatologist</p>
+    <p style="margin-top:6px;">Evercare Hospital Dhaka, Bangladesh</p>
+  </footer>
+
+</body>
+</html>
+```
+
+Save with `Ctrl+S` and close Notepad. Then preview it locally:
+```
+start about.html
