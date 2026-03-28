@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Doctors — Dr M Quamrul Hassan</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Georgia, serif; background: #FFF8F0; color: #333; }
+    nav {
+      background: #2E7D32; padding: 14px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { color: white; font-size: 18px; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul li a { color: white; text-decoration: none; font-size: 14px; }
+    nav ul li a:hover { text-decoration: underline; }
+
+    .page-hero {
+      background: linear-gradient(135deg, #E3F2FD, #FFF8F0);
+      padding: 50px 40px; text-align: center;
+    }
+    .page-hero h1 { font-size: 36px; color: #1B5E20; margin-bottom: 10px; }
+    .page-hero p {
+      font-size: 16px; color: #555; max-width: 680px;
+      margin: 0 auto; line-height: 1.8;
+    }
+
+    .content { max-width: 960px; margin: 0 auto; padding: 50px 40px; }
+
+    .section { margin-bottom: 56px; }
+    .section h2 {
+      font-size: 22px; color: #1B5E20;
+      border-left: 4px solid #2E7D32;
+      padding-left: 14px; margin-bottom: 20px;
+    }
+    .section-intro {
+      font-size: 14px; color: #666;
+      line-height: 1.8; margin-bottom: 20px;
+    }
+
+    /* Teaching topic cards */
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .teaching-card {
+      background: white; border-radius: 12px;
+      padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 4px solid #1565C0;
+      cursor: pointer; transition: transform 0.2s;
+    }
+    .teaching-card:hover { transform: translateY(-3px); }
+    .teaching-card .icon { font-size: 28px; margin-bottom: 10px; }
+    .teaching-card h4 { font-size: 15px; color: #1565C0; margin-bottom: 6px; }
+    .teaching-card p { font-size: 13px; color: #666; line-height: 1.6; }
+    .teaching-card .tag {
+      display: inline-block; margin-top: 10px;
+      font-size: 11px; padding: 3px 10px;
+      background: #E3F2FD; color: #1565C0;
+      border-radius: 10px;
+    }
+
+    /* Case studies */
+    .case-card {
+      background: white; border-radius: 12px;
+      margin-bottom: 14px; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-left: 5px solid #1565C0;
+    }
+    .case-header {
+      padding: 18px 22px; cursor: pointer;
+      display: flex; justify-content: space-between;
+      align-items: flex-start; gap: 16px;
+    }
+    .case-header:hover { background: #F8FBFF; }
+    .case-meta { flex: 1; }
+    .case-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+    .case-tag {
+      font-size: 11px; padding: 2px 8px;
+      border-radius: 10px; background: #E3F2FD;
+      color: #1565C0;
+    }
+    .case-tag.new { background: #E8F5E9; color: #2E7D32; }
+    .case-header h4 { font-size: 16px; color: #1B5E20; margin-bottom: 4px; }
+    .case-header p { font-size: 13px; color: #888; }
+    .case-toggle { font-size: 22px; color: #1565C0; flex-shrink: 0; margin-top: 2px; }
+    .case-body {
+      padding: 0 22px; max-height: 0;
+      overflow: hidden; transition: max-height 0.3s ease;
+    }
+    .case-body.open { max-height: 1000px; padding-bottom: 22px; }
+    .case-body h5 { font-size: 14px; color: #1565C0; margin: 14px 0 6px; }
+    .case-body p { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 8px; }
+    .case-body ul { padding-left: 20px; font-size: 14px; color: #555; line-height: 1.8; }
+    .case-body .learning {
+      background: #E8F5E9; border-left: 4px solid #2E7D32;
+      padding: 12px 16px; border-radius: 6px;
+      font-size: 13px; color: #333; line-height: 1.7;
+      margin-top: 12px;
+    }
+    .case-body .learning strong { color: #1B5E20; }
+
+    /* Videos */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .video-placeholder {
+      background: #F1F8F1; border: 1px dashed #A5D6A7;
+      border-radius: 12px; height: 200px;
+      display: flex; align-items: center;
+      justify-content: center; text-align: center;
+      padding: 20px;
+    }
+    .video-placeholder p { font-size: 13px; color: #999; font-style: italic; line-height: 1.6; }
+
+    /* Referral guide */
+    .referral-box {
+      background: white; border-radius: 12px;
+      padding: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-top: 4px solid #2E7D32;
+    }
+    .referral-box h3 { font-size: 18px; color: #1B5E20; margin-bottom: 16px; }
+    .referral-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 12px 0; border-bottom: 0.5px solid #E0E0E0;
+    }
+    .referral-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #2E7D32; color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: bold; flex-shrink: 0;
+    }
+    .referral-text h5 { font-size: 14px; color: #1B5E20; margin-bottom: 3px; }
+    .referral-text p { font-size: 13px; color: #666; line-height: 1.6; }
+    .referral-example {
+      background: #F9FBF9; border: 1px dashed #A5D6A7;
+      border-radius: 8px; padding: 14px 18px;
+      margin-top: 16px; font-size: 13px;
+      color: #555; line-height: 1.8;
+      font-family: Georgia, serif;
+    }
+    .referral-example strong { color: #1B5E20; }
+
+    /* Contact for doctors */
+    .doctor-contact {
+      background: #1B5E20; color: white;
+      border-radius: 14px; padding: 28px 36px;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .doctor-contact h3 { font-size: 18px; margin-bottom: 6px; }
+    .doctor-contact p { font-size: 14px; opacity: 0.9; line-height: 1.6; }
+    .doctor-contact .number {
+      background: white; color: #1B5E20;
+      padding: 12px 24px; border-radius: 30px;
+      font-size: 20px; font-weight: bold; white-space: nowrap;
+    }
+
+    footer {
+      background: #1B5E20; color: #ccc;
+      text-align: center; padding: 24px;
+      font-size: 13px; margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Dr M Q Hassan</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About & CV</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="parents.html">For Parents</a></li>
+      <li><a href="doctors.html">For Doctors</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>For Doctors</h1>
+    <p>Teaching resources, clinical case discussions and referral guidance
+    for GPs, junior doctors and medical students from
+    Dr M Quamrul Hassan — Senior Consultant Paediatrician & Neonatologist</p>
+  </div>
+
+  <div class="content">
+
+    <!-- Teaching Topics -->
+    <div class="section">
+      <h2>Teaching Topics</h2>
+      <p class="section-intro">
+        A growing library of clinical teaching materials covering core paediatric topics.
+        New content added regularly. Click any topic to explore further.
+      </p>
+      <div class="teaching-grid">
+
+        <div class="teaching-card">
+          <div class="icon">📊</div>
+          <h4>Interpreting Growth Charts</h4>
+          <p>Centile charts, plotting correctly, identifying faltering growth, understanding weight-for-height and BMI in children.</p>
+          <span class="tag">Practical skill</span>
+        </div>
+
+        <div class="teaching-card">
+          <div class="icon">🗣️</div>
+          <h4>Communicating with Parents</h4>
+          <p>Breaking difficult news, managing anxious parents, explaining diagnoses clearly and building therapeutic relationships.</p>
+          <span class="tag">Communication</span>
+        </div>
+
+        <div class="teaching-card">
+          <div class="icon">💬</div>
+          <h4>Counselling in Paediatrics</h4>
+          <p>Principles of counselling, behavioural issues, chronic disease management conversations and motivational interviewing.</p>
+          <span class="tag">Communication</span>
+        </div>
+
+        <div class="teaching-card">
+          <div class="icon">👂</div>
+          <h4>Managing Adenoids</h4>
+          <p>Clinical assessment, indications for surgery vs medical management, when to refer and post-operative guidance.</p>
+          <span class="tag">Clinical</span>
+        </div>
+
+        <div class="teaching-card">
+          <div class="icon">🩺</div>
+          <h4>Approach to a Sick Child</h4>
+          <p>Systematic assessment, recognition of the seriously ill child, ABCDE approach, traffic light fever system and early warning signs.</p>
+          <span class="tag">Emergency</span>
+        </div>
+
+        <div class="teaching-card">
+          <div class="icon">📝</div>
+          <h4>Writing a Referral Note</h4>
+          <p>What to include, how to prioritise, SBAR format, essential clinical information and how a good referral improves patient care.</p>
+          <span class="tag">Practical skill</span>
+        </div>
+
+        <div class="teaching-card">
+          <div class="icon">🔬</div>
+          <h4>Research Methods</h4>
+          <p>Study designs, formulating a research question, literature review, ethical considerations and getting your first paper published.</p>
+          <span class="tag">Research</span>
+        </div>
+
+        <div class="teaching-card">
+          <div class="icon">📈</div>
+          <h4>Statistics for Doctors</h4>
+          <p>Practical statistics for clinical practice — mean, median, p-value, confidence intervals, sensitivity, specificity and NNT explained simply.</p>
+          <span class="tag">Research</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Case Studies -->
+    <div class="section">
+      <h2>Case Studies</h2>
+      <p class="section-intro">
+        Detailed clinical case discussions updated monthly.
+        Each case presents a real-world scenario with structured discussion,
+        differential diagnosis and learning points.
+      </p>
+
+      <!-- Case 1 -->
+      <div class="case-card">
+        <div class="case-header" onclick="toggleCase(this)">
+          <div class="case-meta">
+            <div class="case-tags">
+              <span class="case-tag new">New — March 2026</span>
+              <span class="case-tag">Respiratory</span>
+            </div>
+            <h4>Case 1 — The Wheezy Toddler: Asthma or Something Else?</h4>
+            <p>18-month-old boy, recurrent wheeze, not responding to bronchodilators</p>
+          </div>
+          <span class="case-toggle">+</span>
+        </div>
+        <div class="case-body">
+          <h5>Presentation</h5>
+          <p>An 18-month-old boy presents with his third episode of wheeze in 6 months. Each episode has been treated with salbutamol nebulisers with partial response. He was born at term, no family history of asthma. His mother reports he wheezes mainly after feeds.</p>
+          <h5>Key Questions to Consider</h5>
+          <ul>
+            <li>Is this truly asthma at this age?</li>
+            <li>What are the differentials for recurrent wheeze in a toddler?</li>
+            <li>What is the significance of post-feed wheeze?</li>
+            <li>What investigations would you request?</li>
+          </ul>
+          <h5>Discussion</h5>
+          <p>[Placeholder — detailed clinical discussion to be added. Include differentials: viral-induced wheeze, gastro-oesophageal reflux, foreign body aspiration, tracheomalacia, congenital anomaly. Discuss investigation pathway and management.]</p>
+          <div class="learning">
+            <strong>Learning Point:</strong> Recurrent wheeze in a child under 2 years is not automatically asthma. A careful history — especially the relationship to feeds, posture and infections — often points to the correct diagnosis.
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="case-card">
+        <div class="case-header" onclick="toggleCase(this)">
+          <div class="case-meta">
+            <div class="case-tags">
+              <span class="case-tag">Neonatology</span>
+            </div>
+            <h4>Case 2 — The Jaundiced Newborn: Safe to Observe or Act Now?</h4>
+            <p>Day 3 newborn, visible jaundice, exclusively breastfed</p>
+          </div>
+          <span class="case-toggle">+</span>
+        </div>
+        <div class="case-body">
+          <h5>Presentation</h5>
+          <p>A 3-day-old term newborn is noted to be visibly jaundiced. She is breastfeeding well, passing urine and stools normally. Mother is blood group O positive. Baby appears alert and active.</p>
+          <h5>Key Questions to Consider</h5>
+          <ul>
+            <li>How do you assess severity of neonatal jaundice clinically?</li>
+            <li>What is the significance of the timing — day 3?</li>
+            <li>What investigations are essential?</li>
+            <li>What are the thresholds for phototherapy?</li>
+          </ul>
+          <h5>Discussion</h5>
+          <p>[Placeholder — detailed discussion to be added. Cover physiological vs pathological jaundice, serum bilirubin interpretation, NICE guidelines for phototherapy thresholds, ABO incompatibility, G6PD deficiency, and breastfeeding jaundice.]</p>
+          <div class="learning">
+            <strong>Learning Point:</strong> Jaundice appearing after 24 hours and before day 14 in a well term baby is likely physiological — but always measure bilirubin and plot on the treatment threshold chart before deciding to observe.
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="case-card">
+        <div class="case-header" onclick="toggleCase(this)">
+          <div class="case-meta">
+            <div class="case-tags">
+              <span class="case-tag">Fever</span>
+              <span class="case-tag">Rare Disease</span>
+            </div>
+            <h4>Case 3 — Prolonged Fever: When to Think Beyond Infection</h4>
+            <p>5-year-old girl, fever for 8 days, not responding to antibiotics</p>
+          </div>
+          <span class="case-toggle">+</span>
+        </div>
+        <div class="case-body">
+          <h5>Presentation</h5>
+          <p>A 5-year-old girl presents with 8 days of high fever, rash, red eyes and cracked lips. She was started on antibiotics by her GP 5 days ago with no improvement. She is irritable and her CRP is markedly elevated.</p>
+          <h5>Key Questions to Consider</h5>
+          <ul>
+            <li>What is your differential diagnosis for fever of 5 or more days?</li>
+            <li>Which clinical features point towards Kawasaki disease?</li>
+            <li>What is the risk of delayed diagnosis?</li>
+            <li>What is the treatment and why must it be given promptly?</li>
+          </ul>
+          <h5>Discussion</h5>
+          <p>[Placeholder — detailed discussion to be added. Cover Kawasaki diagnostic criteria, incomplete Kawasaki, coronary artery aneurysm risk, IVIG and aspirin treatment, echo findings and follow-up.]</p>
+          <div class="learning">
+            <strong>Learning Point:</strong> Any child with fever for 5 or more days must have Kawasaki disease actively considered. Delayed treatment beyond day 10 significantly increases the risk of coronary artery complications.
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 4 placeholder -->
+      <div class="case-card">
+        <div class="case-header" onclick="toggleCase(this)">
+          <div class="case-meta">
+            <div class="case-tags">
+              <span class="case-tag">Coming — April 2026</span>
+            </div>
+            <h4>Case 4 — [Next monthly case — to be published April 2026]</h4>
+            <p>Check back next month for the new case discussion</p>
+          </div>
+          <span class="case-toggle">+</span>
+        </div>
+        <div class="case-body">
+          <p style="font-style:italic; color:#999;">[This case study will be published in April 2026. Topics under consideration: approach to the limping child, management of severe malnutrition, or neonatal seizures.]</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Teaching Videos -->
+    <div class="section">
+      <h2>Teaching Videos</h2>
+      <p class="section-intro">Clinical teaching videos for junior doctors and medical students. New videos added regularly.</p>
+      <div class="video-grid">
+        <div class="video-placeholder">
+          <p>[Teaching video 1 — add YouTube link here]<br>Topic: Approach to the sick child</p>
+        </div>
+        <div class="video-placeholder">
+          <p>[Teaching video 2 — add YouTube link here]<br>Topic: Interpreting growth charts</p>
+        </div>
+        <div class="video-placeholder">
+          <p>[Teaching video 3 — add YouTube link here]<br>Topic: Communicating with parents</p>
+        </div>
+        <div class="video-placeholder">
+          <p>[Teaching video 4 — add YouTube link here]<br>Topic: Statistics for doctors</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Referral Guidelines -->
+    <div class="section">
+      <h2>Referral Guidelines</h2>
+      <p class="section-intro">
+        A good referral note improves patient care, reduces delays and demonstrates
+        clinical thinking. Here are the essential components of an effective
+        paediatric referral.
+      </p>
+      <div class="referral-box">
+        <h3>Essentials in a Paediatric Referral Note</h3>
+
+        <div class="referral-item">
+          <div class="referral-num">1</div>
+          <div class="referral-text">
+            <h5>Patient details</h5>
+            <p>Full name, date of birth, age in years and months, sex, weight, contact number of parent or guardian.</p>
+          </div>
+        </div>
+
+        <div class="referral-item">
+          <div class="referral-num">2</div>
+          <div class="referral-text">
+            <h5>Reason for referral — one clear sentence</h5>
+            <p>State the primary clinical concern clearly. Avoid vague terms like "for review". Example: "Referred for assessment of recurrent wheeze not responding to bronchodilators."</p>
+          </div>
+        </div>
+
+        <div class="referral-item">
+          <div class="referral-num">3</div>
+          <div class="referral-text">
+            <h5>Relevant history</h5>
+            <p>Duration of symptoms, relevant past medical history, birth history if relevant, family history, current medications and known allergies.</p>
+          </div>
+        </div>
+
+        <div class="referral-item">
+          <div class="referral-num">4</div>
+          <div class="referral-text">
+            <h5>Examination findings</h5>
+            <p>Vital signs, weight and height, relevant positive and negative findings. Growth centile if available.</p>
+          </div>
+        </div>
+
+        <div class="referral-item">
+          <div class="referral-num">5</div>
+          <div class="referral-text">
+            <h5>Investigations already done</h5>
+            <p>Include results of blood tests, imaging, cultures or any specialist investigations already performed. Attach reports where possible.</p>
+          </div>
+        </div>
+
+        <div class="referral-item">
+          <div class="referral-num">6</div>
+          <div class="referral-text">
+            <h5>Urgency</h5>
+            <p>Clearly state if the referral is urgent or routine. If urgent, explain why. This ensures the child is seen at the right time.</p>
+          </div>
+        </div>
+
+        <div class="referral-item">
+          <div class="referral-num">7</div>
+          <div class="referral-text">
+            <h5>Your contact details</h5>
+            <p>Name, designation, institution and contact number. The specialist may need to call you before the appointment.</p>
+          </div>
+        </div>
+
+        <div class="referral-example">
+          <strong>Example referral sentence:</strong><br><br>
+          "I am referring [Name], a 4-year-old boy weighing 14 kg, for assessment of recurrent wheeze over the past 6 months. He has had 4 episodes, each triggered by viral infections, with partial response to salbutamol. Examination today shows mild subcostal recession and wheeze bilaterally. CXR shows hyperinflation. He is on regular salbutamol inhaler. I would be grateful for your assessment and management advice. <strong>Urgency: Routine.</strong>"
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact for referrals -->
+    <div class="doctor-contact">
+      <div>
+        <h3>Referring a Patient?</h3>
+        <p>All referrals are welcome. Appointments are arranged through<br>
+        the Evercare Hospital Call Centre — Saturday to Thursday.</p>
+      </div>
+      <div class="number">📞 16216</div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Dr M Quamrul Hassan — Senior Consultant Paediatrician & Neonatologist</p>
+    <p style="margin-top:6px;">Evercare Hospital Dhaka, Bangladesh</p>
+    <p style="margin-top:6px; font-size:11px;">Content on this page is for medical education purposes only.</p>
+  </footer>
+
+  <script>
+    function toggleCase(el) {
+      const body = el.nextElementSibling;
+      const toggle = el.querySelector('.case-toggle');
+      body.classList.toggle('open');
+      toggle.textContent = body.classList.contains('open') ? '−' : '+';
+    }
+  </script>
+
+</body>
+</html>
+```
+
+Save with `Ctrl+S` and close Notepad. Then preview:
+```
+start doctors.html
