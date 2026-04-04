@@ -1,0 +1,591 @@
+﻿Infection to Antibiotic â€” Paediatric & Neonatal Guide
+A Clinical Reference for Empiric Antimicrobial Selection
+PART 1 â€” NEONATAL INFECTIONS (0â€“28 days)
+1.1 Early-Onset Neonatal Sepsis (EOS)
+Definition: Infection presenting within 72 hours of birth. Organisms acquired from maternal genital tract.
+Common organisms: Group B Streptococcus (GBS), E. coli, Listeria monocytogenes, Klebsiella spp., Enterococcus spp.
+First-line: Benzylpenicillin + Gentamicin
+Second-line (meningitis suspected or confirmed): Ampicillin + Cefotaxime (avoid ceftriaxone in neonates â€” bilirubin displacement)
+Notes:
+Start empirically within 1 hour of suspicion
+Do not wait for culture results
+Add cefotaxime if meningitis suspected â€” better CNS penetration
+GBS remains the most common cause in term infants
+Duration: 7â€“10 days bacteraemia; 14â€“21 days meningitis
+1.2 Late-Onset Neonatal Sepsis (LOS)
+Definition: Infection presenting after 72 hours. Organisms often nosocomial (NICU-acquired).
+Common organisms: Coagulase-negative Staphylococci (CONS), Staphylococcus aureus (MSSA/MRSA), Gram-negative bacilli (Klebsiella, Pseudomonas, Enterobacter), Candida spp.
+First-line: Flucloxacillin + Gentamicin (community/MSSA-predominant setting)
+Alternative first-line (NICU, line-associated): Vancomycin + Gentamicin
+Second-line (Gram-negative resistant organisms suspected): Piperacillin-tazobactam or Meropenem (if ESBL suspected)
+Add antifungal if: Candida risk factors present (prolonged antibiotics, TPN, VLBW, abdominal surgery) â†’ Micafungin or Fluconazole
+Notes:
+CONS is the most common NICU pathogen â€” often line-related
+Remove or replace central line if CONS or S. aureus bacteraemia
+Duration guided by organism, focus, and clinical response
+1.3 Neonatal Meningitis
+Common organisms: GBS, E. coli (K1 strain), Listeria monocytogenes, S. pneumoniae (rare in neonates)
+First-line: Ampicillin + Cefotaxime IV
+Second-line / resistant organisms: Meropenem Â± Vancomycin (if pneumococcal or resistant Gram-negative)
+Notes:
+Always LP before antibiotics if clinically safe
+Minimum 14 days for GBS; 21 days for Gram-negative meningitis
+Repeat LP at 48â€“72h to confirm CSF sterilisation in Gram-negative meningitis
+Dexamethasone NOT routinely recommended in neonatal meningitis
+1.4 Neonatal HSV Infection
+Organisms: HSV-1, HSV-2
+First-line: IV Aciclovir 20 mg/kg TDS x 14 days (skin/eye/mouth disease) or x 21 days (CNS/disseminated)
+Notes:
+Start empirically in any unwell neonate â€” do not wait for PCR
+Vesicular rash, seizures, hepatitis, or fever in first month = consider HSV
+Follow with oral suppressive aciclovir for 6 months after CNS disease
+1.5 Neonatal Conjunctivitis (Ophthalmia Neonatorum)
+Common organisms: Neisseria gonorrhoeae (within 5 days), Chlamydia trachomatis (5â€“14 days), Chemical (day 1)
+First-line (gonococcal): Ceftriaxone 50 mg/kg IM single dose (max 150 mg) + saline eye irrigation
+First-line (chlamydial): Oral Azithromycin 20 mg/kg OD x 3 days (preferred) OR Erythromycin x 14 days
+Notes:
+Gonococcal conjunctivitis is a medical emergency â€” corneal perforation risk
+Treat mother and partner simultaneously
+Chlamydial: systemic treatment essential (topical alone insufficient)
+1.6 Neonatal Omphalitis
+Common organisms: S. aureus, GBS, E. coli, anaerobes (polymicrobial)
+First-line (mild â€” erythema only): Flucloxacillin + Gentamicin IV
+Second-line / necrotising omphalitis: Piperacillin-tazobactam + Metronidazole IV (surgical referral urgent)
+Notes:
+Necrotising omphalitis requires urgent surgical debridement
+Spreads rapidly â€” reassess every few hours
+PART 2 â€” RESPIRATORY TRACT INFECTIONS
+2.1 Community-Acquired Pneumonia (CAP)
+Age-based organism variation:
+Age
+Common organisms
+<1 month
+GBS, E. coli, Listeria, Chlamydia trachomatis
+1â€“3 months
+C. trachomatis, RSV, S. pneumoniae
+3 monthsâ€“5 years
+S. pneumoniae, viral (RSV, parainfluenza), H. influenzae
+>5 years
+S. pneumoniae, Mycoplasma pneumoniae, Chlamydia pneumoniae
+First-line (mildâ€“moderate, outpatient):
+<5 years: Amoxicillin 40â€“90 mg/kg/day in 3 divided doses x 5 days
+5 years: Amoxicillin + Clarithromycin (atypical cover)
+Penicillin allergy: Clarithromycin or Doxycycline (>8 years)
+Second-line (severe, hospitalised):
+IV Amoxicillin or Co-amoxiclav
+Add Clarithromycin if atypical pneumonia suspected (school-age child)
+Ceftriaxone if very severe or no response to amoxicillin
+Notes:
+Viral aetiology is commonest in <3 years â€” antibiotics often not needed
+Mycoplasma is the classic "walking pneumonia" in school-age children
+Do not routinely use broad-spectrum antibiotics for mild community CAP
+2.2 Pertussis (Whooping Cough)
+Organism: Bordetella pertussis
+First-line: Azithromycin 10 mg/kg OD x 5 days (all ages; preferred in infants)
+Second-line: Clarithromycin 7.5 mg/kg BD x 7 days
+Alternative (>2 months): Co-trimoxazole (if macrolide intolerant)
+Notes:
+Antibiotics reduce infectivity, not necessarily illness duration
+Treatment most effective if started in catarrhal phase
+Admit infants <3 months â€” risk of apnoea and death
+Notify public health
+2.3 Acute Otitis Media (AOM)
+Common organisms: S. pneumoniae, H. influenzae, Moraxella catarrhalis, viral
+First-line: Amoxicillin 40â€“90 mg/kg/day x 5â€“7 days
+Second-line (treatment failure, recurrent, or penicillin allergy): Co-amoxiclav OR Cefuroxime OR Clarithromycin (if pen allergy)
+Notes:
+Many cases resolve without antibiotics â€” watchful waiting acceptable in >2 years with mild symptoms
+High-dose amoxicillin for suspected resistant S. pneumoniae
+Bilateral AOM in <2 years: treat with antibiotics
+Refer if recurrent (>3 episodes in 6 months)
+2.4 Acute Tonsillitis / Pharyngitis
+Common organisms: Group A Streptococcus (GAS), viral (most cases in children)
+First-line (confirmed or suspected GAS): Phenoxymethylpenicillin (Pen V) 12.5 mg/kg QDS x 10 days
+Second-line / penicillin allergy: Clarithromycin 7.5 mg/kg BD x 5 days OR Azithromycin x 3 days
+Notes:
+Use FeverPAIN or Centor score to guide antibiotic decision
+FeverPAIN score â‰¥4 = likely bacterial, treat
+Do not use amoxicillin â€” risk of widespread rash if EBV
+Rheumatic fever prevention: complete full 10-day course
+Peritonsillar abscess (quinsy): Co-amoxiclav IV + surgical drainage
+2.5 Acute Sinusitis
+Common organisms: S. pneumoniae, H. influenzae, Moraxella catarrhalis
+First-line: Amoxicillin 40 mg/kg/day x 10â€“14 days
+Second-line: Co-amoxiclav (if no response at 48â€“72h or recurrent)
+Notes:
+Viral sinusitis is far more common â€” do not treat unless symptoms >10 days or worsening
+Complications (orbital cellulitis, intracranial extension) require IV ceftriaxone urgently
+2.6 Epiglottitis
+Common organism: H. influenzae type b (Hib), GAS
+First-line: Ceftriaxone 80â€“100 mg/kg/day IV
+Notes:
+Airway emergency â€” do not examine throat, do not distress child
+Anaesthetics/ENT present at assessment
+Unimmunised children at highest risk
+Rifampicin prophylaxis for close contacts
+PART 3 â€” URINARY TRACT INFECTIONS
+3.1 Lower UTI (Cystitis)
+Common organisms: E. coli (>80%), Klebsiella, Proteus, Enterococcus
+First-line: Trimethoprim 4 mg/kg BD x 3â€“7 days OR Nitrofurantoin 1 mg/kg QDS x 3â€“7 days
+Second-line: Cefalexin OR Co-amoxiclav (guided by sensitivity)
+Notes:
+Send MSU before starting treatment
+Nitrofurantoin: avoid if <3 months, avoid if upper tract infection suspected
+Boys with UTI always warrants investigation (USS Â± MCUG)
+3.2 Upper UTI / Pyelonephritis / Febrile UTI
+Common organisms: E. coli, Klebsiella, Pseudomonas (if structural anomaly)
+First-line (oral, if tolerating): Co-amoxiclav OR Cefalexin x 7â€“10 days
+First-line (IV, if unwell/vomiting): Ceftriaxone 50 mg/kg OD IV OR Gentamicin + Ampicillin (neonates)
+Second-line (resistant organisms / no response): Meropenem (ESBL) or Ciprofloxacin (guided by sensitivity)
+Notes:
+All children <3 months with febrile UTI: IV treatment
+Imaging: renal USS within 6 weeks; DMSA scan if recurrent
+NICE: all children <6 months with first febrile UTI need imaging
+PART 4 â€” CNS INFECTIONS
+4.1 Bacterial Meningitis (beyond neonatal period)
+Age-based organisms:
+Age
+Common organisms
+1â€“3 months
+GBS, E. coli, S. pneumoniae, N. meningitidis
+3 monthsâ€“5 years
+N. meningitidis, S. pneumoniae, H. influenzae
+>5 years
+N. meningitidis, S. pneumoniae
+First-line: Ceftriaxone 80â€“100 mg/kg/day IV OD (max 4g)
+Add Ampicillin if: Age <3 months or immunocompromised (Listeria cover)
+Second-line (resistant pneumococcus): Add Vancomycin 15 mg/kg QDS IV
+Adjunctive: Dexamethasone 0.15 mg/kg QDS x 4 days â€” start with or before first antibiotic dose in children >3 months. Reduces hearing loss in pneumococcal meningitis.
+Notes:
+Do LP before antibiotics only if no contraindication (raised ICP, coagulopathy, haemodynamic instability)
+If LP delayed â€” give antibiotics first, do not wait
+Meningococcal disease: notify public health immediately
+Rifampicin prophylaxis for household contacts
+Duration: 7 days (meningococcal), 10â€“14 days (pneumococcal), 21 days (Gram-negative)
+4.2 Viral Encephalitis
+Common organisms: HSV (most important), Enterovirus, EBV, CMV, VZV
+First-line (empiric â€” always cover HSV): IV Aciclovir 10â€“15 mg/kg TDS (start immediately, before MRI or LP result)
+Add: Ceftriaxone until bacterial meningitis excluded
+Notes:
+HSV encephalitis is treatable â€” delay is catastrophic
+MRI: temporal lobe involvement suggests HSV
+CSF HSV PCR may be negative early â€” do not stop aciclovir on negative PCR if clinical suspicion remains
+Duration: 14â€“21 days IV aciclovir
+4.3 Brain Abscess
+Common organisms: Streptococcus milleri group, anaerobes, S. aureus, Gram-negatives (post-trauma/surgery)
+First-line: Ceftriaxone + Metronidazole IV
+Add Flucloxacillin if: Post-traumatic or post-neurosurgical (S. aureus risk)
+Second-line: Meropenem + Vancomycin (nosocomial, MRSA risk, no response)
+Notes:
+Neurosurgical drainage often required â€” medical management alone for small (<2.5cm) abscesses
+Prolonged treatment: 6â€“8 weeks total
+Serial MRI to monitor response
+PART 5 â€” SKIN & SOFT TISSUE INFECTIONS
+5.1 Impetigo
+Common organisms: S. aureus, GAS
+First-line (localised): Topical Fusidic acid 3 x daily x 5 days OR Mupirocin (if fusidic acid resistance)
+First-line (widespread/systemic): Flucloxacillin 12.5â€“25 mg/kg QDS oral x 5â€“7 days
+Second-line / MRSA: Co-trimoxazole OR Clindamycin
+Notes:
+School exclusion until lesions crusted or 48h of treatment
+Do not use topical fusidic acid for >7 days â€” resistance
+5.2 Cellulitis
+Common organisms: S. aureus (MSSA), GAS (most common), occasionally Gram-negatives (immunocompromised, water-related)
+First-line (mild, oral): Flucloxacillin 12.5â€“25 mg/kg QDS x 5â€“7 days
+Second-line (penicillin allergy or MRSA suspected): Clindamycin OR Co-trimoxazole
+Severe/hospitalised (IV): Flucloxacillin IV Â± Benzylpenicillin (GAS cover)
+MRSA cellulitis: Vancomycin IV or Clindamycin or Co-trimoxazole
+Notes:
+Mark the border of erythema with a pen at presentation â€” monitor spread
+Elevate affected limb
+Water/marine exposure: add Doxycycline (Vibrio, Aeromonas)
+Periorbital (preseptal) cellulitis: Co-amoxiclav IV; always exclude orbital cellulitis
+5.3 Orbital Cellulitis (Postseptal)
+Common organisms: S. pneumoniae, S. aureus, GAS, anaerobes (from sinusitis extension)
+First-line: Ceftriaxone + Metronidazole IV
+Add Vancomycin if: MRSA suspected or no response
+Notes:
+CT orbits urgently to distinguish preseptal vs orbital
+Ophthalmology and ENT involvement mandatory
+Surgical drainage if subperiosteal abscess, vision threatened, no improvement at 24â€“48h
+5.4 Necrotising Fasciitis
+Common organisms: Type I (polymicrobial): GAS + anaerobes + Gram-negatives Type II (monomicrobial): GAS or S. aureus
+First-line: Piperacillin-tazobactam + Clindamycin + Vancomycin IV
+Notes:
+Surgical emergency â€” antibiotics alone are insufficient
+Clindamycin essential for anti-toxin effect
+Mortality high without early surgical debridement
+IVIG may be considered in severe GAS disease
+PART 6 â€” BONE & JOINT INFECTIONS
+6.1 Acute Osteomyelitis
+Common organisms (age-based):
+Age
+Organisms
+Neonates
+GBS, S. aureus, Gram-negatives
+<5 years
+S. aureus, GAS, S. pneumoniae
+>5 years
+S. aureus (dominant), GAS
+Sickle cell
+Salmonella, S. aureus
+Puncture wound
+Pseudomonas aeruginosa
+First-line (MSSA, most common): Flucloxacillin 50 mg/kg QDS IV â†’ oral step-down when CRP falling and clinically improving
+Second-line / MRSA suspected: Vancomycin IV OR Clindamycin (if clindamycin-sensitive MRSA)
+Sickle cell disease: Ceftriaxone + Flucloxacillin (covers both Salmonella and S. aureus)
+Notes:
+MRI is investigation of choice
+IV-to-oral switch: safe once CRP falling, afebrile, tolerating oral â€” usually 3â€“5 days IV
+Total duration: 3â€“6 weeks depending on organism and response
+Surgical drainage if subperiosteal abscess, no response, or neonatal osteomyelitis
+6.2 Septic Arthritis
+Common organisms: S. aureus (most common at all ages), GBS (neonates), N. gonorrhoeae (sexually active adolescents), Kingella kingae (toddlers)
+First-line: Flucloxacillin 50 mg/kg QDS IV
+Neonates: Flucloxacillin + Cefotaxime (broad cover for GBS and Gram-negatives)
+MRSA suspected: Vancomycin IV
+Adolescents (gonococcal): Ceftriaxone 50 mg/kg OD IV
+Notes:
+Orthopedic emergency â€” joint washout usually required
+Kocher criteria help assess probability (fever, non-weight-bearing, raised CRP/ESR, raised WBC)
+Kingella kingae: oral amoxicillin sufficient once identified
+Duration: 2â€“3 weeks total (shorter if good surgical drainage)
+PART 7 â€” GASTROINTESTINAL INFECTIONS
+7.1 Gastroenteritis
+Common organisms: Rotavirus, Norovirus, Adenovirus (viral â€” majority), Salmonella, Campylobacter, E. coli (STEC), Shigella (bacterial)
+Antibiotics: Not routinely recommended for viral or uncomplicated bacterial gastroenteritis
+Treat with antibiotics if:
+Shigella: Azithromycin 12 mg/kg OD x 3 days (first-line UK)
+Salmonella (invasive/bacteraemia): Ceftriaxone IV, then Ciprofloxacin oral
+Campylobacter (severe/immunocompromised): Azithromycin 10 mg/kg OD x 3 days
+Giardia: Metronidazole 7.5 mg/kg TDS x 5â€“7 days
+C. difficile (mildâ€“moderate): Metronidazole; (severe): Oral Vancomycin
+Notes:
+E. coli O157 (STEC): do NOT give antibiotics â€” risk of HUS
+Rehydration is the mainstay of treatment
+Rotavirus: prevent with vaccination
+7.2 Intra-abdominal Sepsis / Peritonitis
+Common organisms: E. coli, Bacteroides fragilis, Enterococcus, Klebsiella (polymicrobial)
+First-line: Co-amoxiclav IV OR Ceftriaxone + Metronidazole IV
+Second-line (severe / hospital-acquired): Piperacillin-tazobactam IV
+Third-line (ESBL / no response): Meropenem IV
+Notes:
+Surgical source control is essential â€” antibiotics are adjunctive
+Spontaneous bacterial peritonitis (SBP in cirrhosis): Ceftriaxone + Albumin
+PART 8 â€” FEVER WITHOUT SOURCE & SEPSIS
+8.1 Fever Without Source (FWS) â€” Infant <3 Months
+Risk stratification: Use NICE traffic light, PECARN, or Step-by-Step criteria
+High risk / unwell infant: Admit; Blood culture, LP, urine; Start Ceftriaxone + Aciclovir empirically (cover HSV)
+Low risk, well infant (>28 days): Observe; LP if <21 days; guided by CRP/PCT
+Notes:
+Age <21 days: always admit and treat as sepsis
+HSV must always be considered in any febrile neonate
+SBI (serious bacterial infection) risk is highest in first 3 months
+8.2 Paediatric Sepsis
+Empiric treatment:
+Setting
+First-line
+Second-line
+Community-acquired
+Ceftriaxone IV
++ Vancomycin if MRSA risk
+Hospital-acquired
+Piperacillin-tazobactam
+Meropenem if ESBL
+Febrile neutropenia
+Piperacillin-tazobactam
++ Vancomycin; Meropenem 2nd line
+Neonatal
+Benzylpenicillin + Gentamicin
+Ampicillin + Cefotaxime (meningitis)
+Notes:
+Give antibiotics within 1 hour of sepsis recognition â€” every hour delay increases mortality
+Follow Sepsis 6 / PEWS protocol
+De-escalate based on cultures â€” do not continue broad-spectrum unnecessarily
+Consider antifungal if Candida risk factors (VLBW, prolonged antibiotics, TPN, abdominal surgery)
+PART 9 â€” LESS COMMON BUT IMPORTANT INFECTIONS
+9.1 Lyme Disease
+Organism: Borrelia burgdorferi
+Stage
+Treatment
+Early localised (EM rash)
+Amoxicillin x 14â€“21 days (<8 yrs) or Doxycycline x 14â€“21 days (â‰¥8 yrs)
+Early disseminated (facial palsy, arthritis)
+Same oral regimen, 21â€“28 days
+Lyme meningitis / encephalitis
+Ceftriaxone IV x 14â€“28 days
+Lyme carditis
+Ceftriaxone IV (severe) or oral (mild)
+9.2 Typhoid Fever
+Organism: Salmonella typhi / paratyphi
+First-line (sensitive): Azithromycin 20 mg/kg OD x 7 days (oral, uncomplicated)
+Severe / complicated: Ceftriaxone 80 mg/kg OD IV x 10â€“14 days
+Notes:
+Ciprofloxacin resistance common in South Asia â€” avoid empirically
+Notify public health
+School exclusion until 2 negative stool cultures
+9.3 Tuberculosis (TB)
+Standard regimen:
+2 months: Isoniazid + Rifampicin + Pyrazinamide + Ethambutol (HRZE)
+4 months: Isoniazid + Rifampicin (HR)
+TB Meningitis:
+Same 4 drugs x 2 months, then HR x 10 months (total 12 months)
+Add Dexamethasone
+Notes:
+Always notify public health / TB team
+Check for HIV co-infection
+Contact tracing essential
+Directly observed therapy (DOT) preferred
+9.4 Malaria
+Organism: Plasmodium falciparum (severe), P. vivax/ovale/malariae
+Uncomplicated P. falciparum: Artemether-lumefantrine (Riamet) â€” weight-based dosing x 3 days
+Severe P. falciparum: IV Artesunate (preferred) OR IV Quinine + Doxycycline
+P. vivax / ovale: Chloroquine + Primaquine (check G6PD before primaquine)
+Notes:
+Any child returning from endemic area with fever = malaria until proven otherwise
+Thick and thin blood films x 3
+Admit all children with P. falciparum
+Notify public health
+9.5 Meningococcal Disease
+Organism: Neisseria meningitidis (serogroups B, C, W, Y)
+Pre-hospital / GP: Benzylpenicillin IM/IV immediately if meningococcal disease suspected and transfer arranged
+Hospital: Ceftriaxone 80â€“100 mg/kg/day IV
+Prophylaxis for close contacts: Ciprofloxacin single dose (adults and children >5 years) OR Rifampicin BD x 2 days
+Notes:
+Non-blanching rash + fever = emergency
+Do not delay antibiotics for LP
+Notify public health within 24 hours
+
+
+PART 10 — FUNGAL INFECTIONS IN CHILDREN & NEONATES
+
+10.1 Invasive Candidiasis / Candidaemia
+Risk factors:
+Prematurity (VLBW), prolonged antibiotics, central venous catheter, TPN, abdominal surgery, immunocompromised, steroids
+Common organisms:
+Candida albicans, C. parapsilosis (neonates/lines), C. glabrata, C. krusei (azole-resistant), C. auris (emerging, resistant)
+First-line (neonates):
+Micafungin 10 mg/kg OD IV
+First-line (infants and children):
+Caspofungin 70 mg/m² loading then 50 mg/m² OD IV
+OR Micafungin 2 mg/kg OD IV
+Step-down (once stable, sensitive organism):
+Fluconazole 6–12 mg/kg OD IV/oral (only if C. albicans/parapsilosis, NOT C. krusei/glabrata/auris)
+Second-line (azole-resistant / refractory):
+Liposomal Amphotericin B 3–5 mg/kg OD IV
+Notes:
+Remove or replace central venous catheter — essential for cure
+Ophthalmology review — Candida endophthalmitis can cause permanent visual loss
+Echocardiogram — exclude Candida endocarditis in prolonged candidaemia
+Duration: minimum 14 days from last positive blood culture and resolution of symptoms
+C. auris: requires specialist ID input — pan-resistant strains reported
+
+10.2 Mucosal Candidiasis (Oral Thrush / Nappy Rash)
+Common organisms:
+Candida albicans
+First-line (oral thrush):
+Nystatin 100,000 units QDS oral x 7 days (swab around all mucosal surfaces)
+Second-line / persistent / immunocompromised:
+Fluconazole 3–6 mg/kg OD x 7–14 days
+Oesophageal candidiasis (immunocompromised):
+Fluconazole 6 mg/kg OD x 14–21 days OR Micafungin IV if fluconazole-resistant
+Candida nappy rash:
+Topical Clotrimazole or Miconazole cream x 7–14 days
+Notes:
+Persistent oral thrush in an otherwise well infant beyond 3 months warrants immune workup
+Oesophageal candidiasis in a child = consider HIV or primary immunodeficiency
+
+10.3 Invasive Aspergillosis (IA)
+Risk factors:
+Prolonged neutropenia (AML, HSCT), high-dose steroids, chronic granulomatous disease (CGD), lung transplant
+Common organisms:
+Aspergillus fumigatus (most common), A. flavus, A. terreus (amphotericin-resistant), A. niger
+First-line:
+Voriconazole IV/oral
+<12 years: 9 mg/kg BD (loading x2 doses, then 8 mg/kg BD)
+≥12 years: 6 mg/kg BD loading → 4 mg/kg BD
+TDM essential: target trough 1–5.5 mg/L
+Second-line / voriconazole intolerant:
+Liposomal Amphotericin B 3–5 mg/kg OD IV
+Salvage (refractory IA):
+Posaconazole OR Isavuconazole OR Caspofungin (combination with voriconazole)
+Prophylaxis (high-risk: AML induction, GVHD on steroids):
+Posaconazole 300 mg OD delayed-release tablet (≥13 years)
+Itraconazole or voriconazole for younger children (per local protocol)
+Notes:
+Galactomannan (serum and BAL) — useful diagnostic marker in neutropenic patients
+CT chest: halo sign, air crescent sign suggest IA
+Voriconazole does NOT cover Mucorales — distinguish from mucormycosis early
+Surgical debridement may be needed for localised disease or CNS involvement
+Chronic pulmonary aspergillosis: long-term oral azole therapy
+
+10.4 Mucormycosis
+Risk factors:
+Haematological malignancy, DKA, iron overload (deferoxamine therapy), trauma, burns, immunosuppression
+Common organisms:
+Rhizopus spp., Mucor spp., Cunninghamella spp. (most lethal)
+First-line:
+Liposomal Amphotericin B 5–10 mg/kg OD IV (high dose — do not under-dose)
+Step-down / adjunct:
+Posaconazole delayed-release tablet OR Isavuconazole (once stable)
+Notes:
+Surgical debridement is mandatory and urgent — antibiotics alone will fail
+Rhinosinusal mucormycosis: ENT + ophthalmology + neurosurgery involvement
+Voriconazole has NO activity — if started for suspected Aspergillus and not improving, consider Mucor and switch to amphotericin
+Cunninghamella species: extremely aggressive, very high mortality
+Do NOT use posaconazole suspension — poor absorption; delayed-release tablet only
+Combination amphotericin + echinocandin used in some centres
+
+10.5 Pneumocystis jirovecii Pneumonia (PCP)
+Risk factors:
+HIV/AIDS (CD4 <200), prolonged steroids, SCID, leukaemia (especially during maintenance), organ transplant, biologic therapies
+First-line (treatment):
+Co-trimoxazole (TMP-SMX) 120 mg/kg/day in 4 divided doses IV/oral x 21 days
+Add Prednisolone if moderate-severe (PaO2 <70 mmHg or A-a gradient >35)
+Second-line (intolerant to co-trimoxazole):
+IV Pentamidine 4 mg/kg OD x 21 days
+OR Atovaquone (mild–moderate disease)
+OR Primaquine + Clindamycin
+Prophylaxis:
+Co-trimoxazole 150 mg/m²/day trimethoprim component in 2 divided doses, 3 days per week
+Alternative: Dapsone or monthly nebulised Pentamidine (>5 years)
+Notes:
+PCP in a previously well child = investigate for underlying immunodeficiency
+BAL with silver stain or PCR for diagnosis
+HIV test in all newly diagnosed PCP
+Do not stop prophylaxis prematurely in HIV — continue until immune reconstitution (CD4 >200 for >3 months)
+
+10.6 Cryptococcal Meningitis
+Risk factors:
+HIV (CD4 <100), organ transplant, haematological malignancy
+First-line (induction — 2 weeks):
+Liposomal Amphotericin B 3–4 mg/kg OD IV + Flucytosine 25 mg/kg QDS oral/IV
+Consolidation (8 weeks):
+Fluconazole 12 mg/kg OD oral (max 800 mg)
+Maintenance (≥12 months, HIV):
+Fluconazole 6 mg/kg OD until immune reconstitution
+Notes:
+India ink stain and cryptococcal antigen (CrAg) — rapid bedside diagnosis
+Serial LPs essential — raised intracranial pressure is the main cause of early death
+ICP management: daily LP or lumbar drain until opening pressure <20 cmH2O
+Flucytosine: monitor levels and FBC (bone marrow suppression)
+Rare in immunocompetent children — always investigate immunity
+
+10.7 Dermatophytosis (Tinea Infections)
+Common organisms:
+Trichophyton, Microsporum, Epidermophyton spp.
+Notes:
+Tinea capitis requires systemic treatment — topical alone is insufficient
+Kerion (inflammatory tinea capitis): add short course of prednisolone to reduce scarring
+Contagious — check household contacts and pets (Microsporum canis from cats/dogs)
+Wood's lamp: green fluorescence with Microsporum species only
+
+10.8 Invasive Fungal Infections in Specific Contexts
+Notes:
+Aspergillus is the leading cause of death
+Lifelong Itraconazole prophylaxis 5 mg/kg OD
+Treat invasive aspergillosis with Voriconazole + consider IFN-γ
+Allergic Bronchopulmonary Aspergillosis (ABPA): Itraconazole + Prednisolone
+Aspergillus sensitisation: monitor IgE, spirometry
+Scedosporium apiospermum colonisation: increasing post-transplant — Voriconazole
+Mould prophylaxis: Posaconazole (≥13 yrs) or Voriconazole
+Pre-emptive therapy guided by galactomannan and CT findings
+Echinocandin for suspected invasive candidiasis before species identification
+
+PART 11 — VIRAL INFECTIONS IN CHILDREN & NEONATES
+
+11.1 Herpes Simplex Virus (HSV)
+Treatment (Neonatal):
+IV Aciclovir 20 mg/kg TDS
+Treatment (Encephalitis):
+IV Aciclovir 10–15 mg/kg TDS
+Treatment (Gingivostomatitis):
+Oral Aciclovir 20 mg/kg QDS
+Notes:
+Suppressive therapy: Oral Aciclovir or Valaciclovir daily for 6–12 months
+Aciclovir-resistant HSV: IV Foscarnet (specialist use only)
+
+11.2 Varicella Zoster Virus (VZV)
+First-line (oral, mild–moderate):
+Aciclovir 20 mg/kg QDS x 5 days (start within 24h of rash) OR Valaciclovir 20 mg/kg TDS x 5 days (max 1g TDS)
+First-line (severe / immunocompromised):
+IV Aciclovir 10 mg/kg TDS x 7–10 days
+Post-exposure prophylaxis:
+Varicella-Zoster Immunoglobulin (VZIG) within 10 days of exposure — for immunocompromised, neonates, pregnant contacts
+
+11.3 Cytomegalovirus (CMV)
+First-line (Congenital):
+Oral Valganciclovir 16 mg/kg BD
+First-line (treatment):
+IV Ganciclovir 5 mg/kg BD
+Notes:
+Congenital CMV: test hearing before and after treatment
+Monitor FBC weekly — ganciclovir causes neutropenia
+CMV viraemia in transplant: pre-emptive treatment when viral load rising
+Ganciclovir-resistant CMV: IV Foscarnet OR Cidofovir (specialist)
+
+11.4 Epstein-Barr Virus (EBV) / Infectious Mononucleosis
+Treatment:
+Supportive — no antiviral indicated for uncomplicated infectious mononucleosis
+Notes:
+Do NOT give Amoxicillin or ampicillin — causes widespread maculopapular rash in ~95%
+Avoid contact sports for minimum 4 weeks (splenic rupture risk)
+
+11.5 Respiratory Syncytial Virus (RSV)
+Treatment:
+Supportive — no antiviral routinely recommended
+Antiviral (specialist use only):
+Inhaled Ribavirin — severely immunocompromised children
+Prevention:
+Palivizumab 15 mg/kg IM monthly during RSV season
+
+11.6 Influenza
+Treatment:
+Oseltamivir (Tamiflu) — by weight <15 kg: 30 mg BD x 5 days
+Notes:
+Most effective if started within 48h of symptom onset
+
+11.7 COVID-19 (SARS-CoV-2)
+Treatment:
+Nirmatrelvir/ritonavir (Paxlovid) — limited paediatric data
+Remdesivir IV
+Dexamethasone 0.15 mg/kg OD x 10 days
+MIS-C (Multisystem inflammatory syndrome):
+IVIG 2 g/kg + Aspirin + consider steroids
+
+11.8 Hepatitis B Virus (HBV)
+Treatment:
+Tenofovir disoproxil fumarate (TDF) OR Entecavir
+
+11.9 Hepatitis C Virus (HCV)
+Treatment (≥3 years):
+Sofosbuvir/Velpatasvir (EPCLUSA)
+
+11.10 HIV in Children
+Treatment:
+Lopinavir/ritonavir + 2 NRTIs (ABC + 3TC)
+Dolutegravir + 2 NRTIs
+
+11.11 Viral Haemorrhagic Fevers (VHF)
+Treatment:
+Ebola: Atoltivimab/maftivimab/odesivimab
+Lassa fever: IV Ribavirin
+CCHF: IV Ribavirin
+
+11.12 Enteroviruses (Coxsackievirus, Echovirus, EV-A71)
+Treatment:
+Supportive — no licensed antiviral for most enteroviral disease
+Severe neonatal enteroviral sepsis: IV Immunoglobulin (IVIG)
+
+11.13 Measles
+Treatment:
+Supportive — no specific antiviral licensed
+Vitamin A
+
+11.14 Mumps & Rubella
+Treatment:
+Supportive only — no antiviral
+
+11.15 Adenovirus
+Treatment:
+Cidofovir IV (specialist use) OR Brincidofovir oral

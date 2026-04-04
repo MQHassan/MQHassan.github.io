@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antimicrobials Use in Paediatric Infections</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary: #0f172a;
+        --accent: #2563eb;
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --sidebar-bg: #1e293b;
+        --sidebar-text: #cbd5e1;
+        --text: #334155;
+        --border: #e2e8f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { display: flex; background: var(--bg); color: var(--text); height: 100vh; overflow: hidden; }
+    
+    /* Sidebar */
+    .sidebar { width: 330px; background: var(--sidebar-bg); color: var(--sidebar-text); overflow-y: auto; padding: 30px 20px; flex-shrink: 0; position: relative; z-index: 50; }
+    .sidebar h2 { color: white; font-size: 1.2rem; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #334155; }
+    .nav-item { display: block; padding: 10px 14px; color: var(--sidebar-text); text-decoration: none; border-radius: 8px; margin-bottom: 4px; font-size: 0.95rem; transition: background 0.2s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+    .nav-item:hover, .nav-item:active { background: rgba(255,255,255,0.1); color: white; }
+    
+    .content-wrapper { flex: 1; overflow-y: auto; scroll-behavior: smooth; position: relative; z-index: 10;}
+    
+    /* Cover Page */
+    .cover-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        color: white;
+        padding: 40px;
+    }
+    .cover-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 40px; line-height: 1.2; letter-spacing: -0.02em; text-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .cover-author { font-size: 1.6rem; font-weight: 600; margin-bottom: 10px; color: #bfdbfe; }
+    .cover-hospital { font-size: 1.3rem; font-weight: 500; margin-bottom: 40px; color: #e0e7ff; letter-spacing: 0.05em; }
+    .cover-date { font-size: 1.1rem; font-weight: 400; color: #93c5fd; }
+    
+    /* Inner Page */
+    .inner-page {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px 40px;
+        border-bottom: 1px solid var(--border);
+    }
+    .inner-page h2 { font-size: 2rem; color: var(--primary); margin-bottom: 24px; }
+    .inner-page p { font-size: 1.1rem; line-height: 1.8; color: #475569; margin-bottom: 24px; }
+    .disclaimer-box { background: #fef2f2; border-left: 4px solid #ef4444; padding: 20px; border-radius: 4px; margin-top: 10px; }
+    .disclaimer-box p { color: #991b1b; font-size: 1rem; margin-bottom: 0; font-style: normal; }
+
+    /* Main Container */
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 60px; padding-bottom: 100px; }
+    
+    /* Sections */
+    .part-title { font-size: 1.8rem; color: var(--accent); margin-top: 60px; margin-bottom: 24px; font-weight: 700; border-bottom: 2px solid var(--border); padding-bottom: 10px; scroll-margin-top: 40px;}
+    .topic-card { background: var(--surface); border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .topic-title { font-size: 1.3rem; color: var(--primary); margin-bottom: 16px; font-weight: 600; }
+    
+    p { margin-bottom: 12px; line-height: 1.6; font-size: 1rem; }
+    .label { font-weight: 600; color: #475569; display: inline-block; width: 140px; }
+    .treatment-row { display: flex; margin-bottom: 8px; padding: 8px 0; border-bottom: 1px dashed var(--border); }
+    .treatment-row:last-child { border-bottom: none; }
+    .treatment-label { font-weight: 600; min-width: 140px; color: var(--accent); }
+    .treatment-value { flex: 1; display:flex; align-items: center; }
+    
+    .notes-box { background: #f1f5f9; border-left: 4px solid #64748b; padding: 16px; border-radius: 4px 8px 8px 4px; margin-top: 16px; font-size: 0.95rem; }
+    .notes-box strong { color: #334155; display: block; margin-bottom: 6px; }
+    .notes-box p { margin-bottom: 4px; padding-left: 14px; position:relative; }
+    .notes-box p:before { content:'\2022'; position:absolute; left:0; color:#64748b; font-weight: bold; }
+    
+    @media (max-width: 768px) {
+        body { flex-direction: column; overflow: auto; height: auto; }
+        .sidebar { width: 100%; height: auto; padding: 20px; }
+        .content-wrapper { overflow: visible; }
+        .cover-title { font-size: 2.2rem; }
+        .container { padding: 20px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Book Contents</h2>
+    <div id="nav-links">
+        <a href="#cover" class="nav-item">Front Cover</a>
+        <a href="#preface" class="nav-item">Preface & Disclaimer</a>
+        <!-- Links injected via JS -->
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <!-- FRONT COVER -->
+    <div id="cover" class="cover-page">
+        <h1 class="cover-title">ANTIMICROBIALS USE<br>IN PAEDIATRIC INFECTIONS</h1>
+        <div class="cover-author">DR. M QUAMRUL HASSAN, MBBS, FCPS</div>
+        <div class="cover-hospital">EVERCARE HOSPITAL DHAKA</div>
+        <div class="cover-date">April 2026</div>
+    </div>
+    
+    <!-- INNER PAGE -->
+    <div id="preface" class="inner-page">
+        <h2>Preface</h2>
+        <p>Welcome to the Paediatric Antimicrobial Guide. This interactive e-book has been compiled to assist clinicians, registrars, and medical officers in the fast-paced hospital environment. It distills complex infectious disease guidelines into actionable, weight-based treatment regimens covering bacterial, fungal, and viral infections in neonates and children.</p>
+        <div class="disclaimer-box">
+            <strong>Disclaimer:</strong>
+            <p>This document is intended as a clinical reference only and does not replace acute clinical judgment. Always review patient-specific factors such as allergies, renal function, and local resistance patterns prior to prescribing.</p>
+        </div>
+    </div>
+
+    <!-- MAIN CLINICAL CONTENT -->
+    <div class="container">
+        <div id="main-content">
+<h1 id="part-1--neonatal-infections-028-days" class="part-title">PART 1 — NEONATAL INFECTIONS (0–28 days)</h1>
+<div id="11-early-onset-neonatal-sepsis-eos" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">1.1 Early-Onset Neonatal Sepsis (EOS)</h2>
+<p><span class="label">Definition:</span> Infection presenting within 72 hours of birth. Organisms acquired from maternal genital tract.</p>
+<p><span class="label">Common organisms:</span> Group B Streptococcus (GBS), E. coli, Listeria monocytogenes, Klebsiella spp., Enterococcus spp.</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Benzylpenicillin + Gentamicin</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line (meningitis suspected or confirmed):</div><div class="treatment-value">Ampicillin + Cefotaxime (avoid ceftriaxone in neonates — bilirubin displacement)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Start empirically within 1 hour of suspicion</p>
+<p>Do not wait for culture results</p>
+<p>Add cefotaxime if meningitis suspected — better CNS penetration</p>
+<p>GBS remains the most common cause in term infants</p>
+<p>Duration: 7–10 days bacteraemia; 14–21 days meningitis</p>
+</div>
+</div>
+<div id="12-late-onset-neonatal-sepsis-los" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">1.2 Late-Onset Neonatal Sepsis (LOS)</h2>
+<p><span class="label">Definition:</span> Infection presenting after 72 hours. Organisms often nosocomial (NICU-acquired).</p>
+<p><span class="label">Common organisms:</span> Coagulase-negative Staphylococci (CONS), Staphylococcus aureus (MSSA/MRSA), Gram-negative bacilli (Klebsiella, Pseudomonas, Enterobacter), Candida spp.</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Flucloxacillin + Gentamicin (community/MSSA-predominant setting)</div></div>
+<div class="treatment-row"><div class="treatment-label">Alternative first-line (NICU, line-associated):</div><div class="treatment-value">Vancomycin + Gentamicin</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line (Gram-negative resistant organisms suspected):</div><div class="treatment-value">Piperacillin-tazobactam or Meropenem (if ESBL suspected)</div></div>
+<div class="treatment-row"><div class="treatment-label">Add antifungal if:</div><div class="treatment-value">Candida risk factors present (prolonged antibiotics, TPN, VLBW, abdominal surgery) → Micafungin or Fluconazole</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>CONS is the most common NICU pathogen — often line-related</p>
+<p>Remove or replace central line if CONS or S. aureus bacteraemia</p>
+<p>Duration guided by organism, focus, and clinical response</p>
+</div>
+</div>
+<div id="13-neonatal-meningitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">1.3 Neonatal Meningitis</h2>
+<p><span class="label">Common organisms:</span> GBS, E. coli (K1 strain), Listeria monocytogenes, S. pneumoniae (rare in neonates)</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Ampicillin + Cefotaxime IV</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line / resistant organisms:</div><div class="treatment-value">Meropenem ± Vancomycin (if pneumococcal or resistant Gram-negative)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Always LP before antibiotics if clinically safe</p>
+<p>Minimum 14 days for GBS; 21 days for Gram-negative meningitis</p>
+<p>Repeat LP at 48–72h to confirm CSF sterilisation in Gram-negative meningitis</p>
+<p>Dexamethasone NOT routinely recommended in neonatal meningitis</p>
+</div>
+</div>
+<div id="14-neonatal-hsv-infection" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">1.4 Neonatal HSV Infection</h2>
+<p><span class="label">Organisms:</span> HSV-1, HSV-2</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">IV Aciclovir 20 mg/kg TDS x 14 days (skin/eye/mouth disease) or x 21 days (CNS/disseminated)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Start empirically in any unwell neonate — do not wait for PCR</p>
+<p>Vesicular rash, seizures, hepatitis, or fever in first month = consider HSV</p>
+<p>Follow with oral suppressive aciclovir for 6 months after CNS disease</p>
+</div>
+</div>
+<div id="15-neonatal-conjunctivitis-ophthalmia-neonatorum" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">1.5 Neonatal Conjunctivitis (Ophthalmia Neonatorum)</h2>
+<p><span class="label">Common organisms:</span> Neisseria gonorrhoeae (within 5 days), Chlamydia trachomatis (5–14 days), Chemical (day 1)</p>
+<div class="treatment-row"><div class="treatment-label">First-line (gonococcal):</div><div class="treatment-value">Ceftriaxone 50 mg/kg IM single dose (max 150 mg) + saline eye irrigation</div></div>
+<div class="treatment-row"><div class="treatment-label">First-line (chlamydial):</div><div class="treatment-value">Oral Azithromycin 20 mg/kg OD x 3 days (preferred) OR Erythromycin x 14 days</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Gonococcal conjunctivitis is a medical emergency — corneal perforation risk</p>
+<p>Treat mother and partner simultaneously</p>
+<p>Chlamydial: systemic treatment essential (topical alone insufficient)</p>
+</div>
+</div>
+<div id="16-neonatal-omphalitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">1.6 Neonatal Omphalitis</h2>
+<p><span class="label">Common organisms:</span> S. aureus, GBS, E. coli, anaerobes (polymicrobial)</p>
+<div class="treatment-row"><div class="treatment-label">First-line (mild — erythema only):</div><div class="treatment-value">Flucloxacillin + Gentamicin IV</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line / necrotising omphalitis:</div><div class="treatment-value">Piperacillin-tazobactam + Metronidazole IV (surgical referral urgent)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Necrotising omphalitis requires urgent surgical debridement</p>
+<p>Spreads rapidly — reassess every few hours</p>
+</div>
+</div>
+<h1 id="part-2--respiratory-tract-infections" class="part-title">PART 2 — RESPIRATORY TRACT INFECTIONS</h1>
+<div id="21-community-acquired-pneumonia-cap" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">2.1 Community-Acquired Pneumonia (CAP)</h2>
+<p><span class="label">Age-based organism variation:</span> </p>
+<p>Age</p>
+<p>Common organisms</p>
+<p><1 month</p>
+<p>GBS, E. coli, Listeria, Chlamydia trachomatis</p>
+<p>1–3 months</p>
+<p>C. trachomatis, RSV, S. pneumoniae</p>
+<p>3 months–5 years</p>
+<p>S. pneumoniae, viral (RSV, parainfluenza), H. influenzae</p>
+<p>>5 years</p>
+<p>S. pneumoniae, Mycoplasma pneumoniae, Chlamydia pneumoniae</p>
+<div class="treatment-row"><div class="treatment-label">First-line (mild–moderate, outpatient):</div><div class="treatment-value"></div></div>
+<p><span class="label"><5 years:</span> Amoxicillin 40–90 mg/kg/day in 3 divided doses x 5 days</p>
+<p><span class="label">5 years:</span> Amoxicillin + Clarithromycin (atypical cover)</p>
+<p><span class="label">Penicillin allergy:</span> Clarithromycin or Doxycycline (>8 years)</p>
+<div class="treatment-row"><div class="treatment-label">Second-line (severe, hospitalised):</div><div class="treatment-value"></div></div>
+<p>IV Amoxicillin or Co-amoxiclav</p>
+<p>Add Clarithromycin if atypical pneumonia suspected (school-age child)</p>
+<p>Ceftriaxone if very severe or no response to amoxicillin</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Viral aetiology is commonest in <3 years — antibiotics often not needed</p>
+<p>Mycoplasma is the classic "walking pneumonia" in school-age children</p>
+<p>Do not routinely use broad-spectrum antibiotics for mild community CAP</p>
+</div>
+</div>
+<div id="22-pertussis-whooping-cough" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">2.2 Pertussis (Whooping Cough)</h2>
+<p><span class="label">Organism:</span> Bordetella pertussis</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Azithromycin 10 mg/kg OD x 5 days (all ages; preferred in infants)</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line:</div><div class="treatment-value">Clarithromycin 7.5 mg/kg BD x 7 days</div></div>
+<div class="treatment-row"><div class="treatment-label">Alternative (>2 months):</div><div class="treatment-value">Co-trimoxazole (if macrolide intolerant)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Antibiotics reduce infectivity, not necessarily illness duration</p>
+<p>Treatment most effective if started in catarrhal phase</p>
+<p>Admit infants <3 months — risk of apnoea and death</p>
+<p>Notify public health</p>
+</div>
+</div>
+<div id="23-acute-otitis-media-aom" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">2.3 Acute Otitis Media (AOM)</h2>
+<p><span class="label">Common organisms:</span> S. pneumoniae, H. influenzae, Moraxella catarrhalis, viral</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Amoxicillin 40–90 mg/kg/day x 5–7 days</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line (treatment failure, recurrent, or penicillin allergy):</div><div class="treatment-value">Co-amoxiclav OR Cefuroxime OR Clarithromycin (if pen allergy)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Many cases resolve without antibiotics — watchful waiting acceptable in >2 years with mild symptoms</p>
+<p>High-dose amoxicillin for suspected resistant S. pneumoniae</p>
+<p>Bilateral AOM in <2 years: treat with antibiotics</p>
+<p>Refer if recurrent (>3 episodes in 6 months)</p>
+</div>
+</div>
+<div id="24-acute-tonsillitis--pharyngitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">2.4 Acute Tonsillitis / Pharyngitis</h2>
+<p><span class="label">Common organisms:</span> Group A Streptococcus (GAS), viral (most cases in children)</p>
+<div class="treatment-row"><div class="treatment-label">First-line (confirmed or suspected GAS):</div><div class="treatment-value">Phenoxymethylpenicillin (Pen V) 12.5 mg/kg QDS x 10 days</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line / penicillin allergy:</div><div class="treatment-value">Clarithromycin 7.5 mg/kg BD x 5 days OR Azithromycin x 3 days</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Use FeverPAIN or Centor score to guide antibiotic decision</p>
+<p>FeverPAIN score ≥4 = likely bacterial, treat</p>
+<p>Do not use amoxicillin — risk of widespread rash if EBV</p>
+<p>Rheumatic fever prevention: complete full 10-day course</p>
+<p>Peritonsillar abscess (quinsy): Co-amoxiclav IV + surgical drainage</p>
+</div>
+</div>
+<div id="25-acute-sinusitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">2.5 Acute Sinusitis</h2>
+<p><span class="label">Common organisms:</span> S. pneumoniae, H. influenzae, Moraxella catarrhalis</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Amoxicillin 40 mg/kg/day x 10–14 days</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line:</div><div class="treatment-value">Co-amoxiclav (if no response at 48–72h or recurrent)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Viral sinusitis is far more common — do not treat unless symptoms >10 days or worsening</p>
+<p>Complications (orbital cellulitis, intracranial extension) require IV ceftriaxone urgently</p>
+</div>
+</div>
+<div id="26-epiglottitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">2.6 Epiglottitis</h2>
+<p><span class="label">Common organism:</span> H. influenzae type b (Hib), GAS</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Ceftriaxone 80–100 mg/kg/day IV</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Airway emergency — do not examine throat, do not distress child</p>
+<p>Anaesthetics/ENT present at assessment</p>
+<p>Unimmunised children at highest risk</p>
+<p>Rifampicin prophylaxis for close contacts</p>
+</div>
+</div>
+<h1 id="part-3--urinary-tract-infections" class="part-title">PART 3 — URINARY TRACT INFECTIONS</h1>
+<div id="31-lower-uti-cystitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">3.1 Lower UTI (Cystitis)</h2>
+<p><span class="label">Common organisms:</span> E. coli (>80%), Klebsiella, Proteus, Enterococcus</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Trimethoprim 4 mg/kg BD x 3–7 days OR Nitrofurantoin 1 mg/kg QDS x 3–7 days</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line:</div><div class="treatment-value">Cefalexin OR Co-amoxiclav (guided by sensitivity)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Send MSU before starting treatment</p>
+<p>Nitrofurantoin: avoid if <3 months, avoid if upper tract infection suspected</p>
+<p>Boys with UTI always warrants investigation (USS ± MCUG)</p>
+</div>
+</div>
+<div id="32-upper-uti--pyelonephritis--febrile-uti" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">3.2 Upper UTI / Pyelonephritis / Febrile UTI</h2>
+<p><span class="label">Common organisms:</span> E. coli, Klebsiella, Pseudomonas (if structural anomaly)</p>
+<div class="treatment-row"><div class="treatment-label">First-line (oral, if tolerating):</div><div class="treatment-value">Co-amoxiclav OR Cefalexin x 7–10 days</div></div>
+<div class="treatment-row"><div class="treatment-label">First-line (IV, if unwell/vomiting):</div><div class="treatment-value">Ceftriaxone 50 mg/kg OD IV OR Gentamicin + Ampicillin (neonates)</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line (resistant organisms / no response):</div><div class="treatment-value">Meropenem (ESBL) or Ciprofloxacin (guided by sensitivity)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>All children <3 months with febrile UTI: IV treatment</p>
+<p>Imaging: renal USS within 6 weeks; DMSA scan if recurrent</p>
+<p>NICE: all children <6 months with first febrile UTI need imaging</p>
+</div>
+</div>
+<h1 id="part-4--cns-infections" class="part-title">PART 4 — CNS INFECTIONS</h1>
+<div id="41-bacterial-meningitis-beyond-neonatal-period" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">4.1 Bacterial Meningitis (beyond neonatal period)</h2>
+<p><span class="label">Age-based organisms:</span> </p>
+<p>Age</p>
+<p>Common organisms</p>
+<p>1–3 months</p>
+<p>GBS, E. coli, S. pneumoniae, N. meningitidis</p>
+<p>3 months–5 years</p>
+<p>N. meningitidis, S. pneumoniae, H. influenzae</p>
+<p>>5 years</p>
+<p>N. meningitidis, S. pneumoniae</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Ceftriaxone 80–100 mg/kg/day IV OD (max 4g)</div></div>
+<div class="treatment-row"><div class="treatment-label">Add Ampicillin if:</div><div class="treatment-value">Age <3 months or immunocompromised (Listeria cover)</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line (resistant pneumococcus):</div><div class="treatment-value">Add Vancomycin 15 mg/kg QDS IV</div></div>
+<p><span class="label">Adjunctive:</span> Dexamethasone 0.15 mg/kg QDS x 4 days — start with or before first antibiotic dose in children >3 months. Reduces hearing loss in pneumococcal meningitis.</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Do LP before antibiotics only if no contraindication (raised ICP, coagulopathy, haemodynamic instability)</p>
+<p>If LP delayed — give antibiotics first, do not wait</p>
+<p>Meningococcal disease: notify public health immediately</p>
+<p>Rifampicin prophylaxis for household contacts</p>
+<p>Duration: 7 days (meningococcal), 10–14 days (pneumococcal), 21 days (Gram-negative)</p>
+</div>
+</div>
+<div id="42-viral-encephalitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">4.2 Viral Encephalitis</h2>
+<p><span class="label">Common organisms:</span> HSV (most important), Enterovirus, EBV, CMV, VZV</p>
+<div class="treatment-row"><div class="treatment-label">First-line (empiric — always cover HSV):</div><div class="treatment-value">IV Aciclovir 10–15 mg/kg TDS (start immediately, before MRI or LP result)</div></div>
+<div class="treatment-row"><div class="treatment-label">Add:</div><div class="treatment-value">Ceftriaxone until bacterial meningitis excluded</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>HSV encephalitis is treatable — delay is catastrophic</p>
+<p>MRI: temporal lobe involvement suggests HSV</p>
+<p>CSF HSV PCR may be negative early — do not stop aciclovir on negative PCR if clinical suspicion remains</p>
+<p>Duration: 14–21 days IV aciclovir</p>
+</div>
+</div>
+<div id="43-brain-abscess" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">4.3 Brain Abscess</h2>
+<p><span class="label">Common organisms:</span> Streptococcus milleri group, anaerobes, S. aureus, Gram-negatives (post-trauma/surgery)</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Ceftriaxone + Metronidazole IV</div></div>
+<div class="treatment-row"><div class="treatment-label">Add Flucloxacillin if:</div><div class="treatment-value">Post-traumatic or post-neurosurgical (S. aureus risk)</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line:</div><div class="treatment-value">Meropenem + Vancomycin (nosocomial, MRSA risk, no response)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Neurosurgical drainage often required — medical management alone for small (<2.5cm) abscesses</p>
+<p>Prolonged treatment: 6–8 weeks total</p>
+<p>Serial MRI to monitor response</p>
+</div>
+</div>
+<h1 id="part-5--skin--soft-tissue-infections" class="part-title">PART 5 — SKIN & SOFT TISSUE INFECTIONS</h1>
+<div id="51-impetigo" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">5.1 Impetigo</h2>
+<p><span class="label">Common organisms:</span> S. aureus, GAS</p>
+<div class="treatment-row"><div class="treatment-label">First-line (localised):</div><div class="treatment-value">Topical Fusidic acid 3 x daily x 5 days OR Mupirocin (if fusidic acid resistance)</div></div>
+<div class="treatment-row"><div class="treatment-label">First-line (widespread/systemic):</div><div class="treatment-value">Flucloxacillin 12.5–25 mg/kg QDS oral x 5–7 days</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line / MRSA:</div><div class="treatment-value">Co-trimoxazole OR Clindamycin</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>School exclusion until lesions crusted or 48h of treatment</p>
+<p>Do not use topical fusidic acid for >7 days — resistance</p>
+</div>
+</div>
+<div id="52-cellulitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">5.2 Cellulitis</h2>
+<p><span class="label">Common organisms:</span> S. aureus (MSSA), GAS (most common), occasionally Gram-negatives (immunocompromised, water-related)</p>
+<div class="treatment-row"><div class="treatment-label">First-line (mild, oral):</div><div class="treatment-value">Flucloxacillin 12.5–25 mg/kg QDS x 5–7 days</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line (penicillin allergy or MRSA suspected):</div><div class="treatment-value">Clindamycin OR Co-trimoxazole</div></div>
+<p><span class="label">Severe/hospitalised (IV):</span> Flucloxacillin IV ± Benzylpenicillin (GAS cover)</p>
+<p><span class="label">MRSA cellulitis:</span> Vancomycin IV or Clindamycin or Co-trimoxazole</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Mark the border of erythema with a pen at presentation — monitor spread</p>
+<p>Elevate affected limb</p>
+<p>Water/marine exposure: add Doxycycline (Vibrio, Aeromonas)</p>
+<p>Periorbital (preseptal) cellulitis: Co-amoxiclav IV; always exclude orbital cellulitis</p>
+</div>
+</div>
+<div id="53-orbital-cellulitis-postseptal" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">5.3 Orbital Cellulitis (Postseptal)</h2>
+<p><span class="label">Common organisms:</span> S. pneumoniae, S. aureus, GAS, anaerobes (from sinusitis extension)</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Ceftriaxone + Metronidazole IV</div></div>
+<div class="treatment-row"><div class="treatment-label">Add Vancomycin if:</div><div class="treatment-value">MRSA suspected or no response</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>CT orbits urgently to distinguish preseptal vs orbital</p>
+<p>Ophthalmology and ENT involvement mandatory</p>
+<p>Surgical drainage if subperiosteal abscess, vision threatened, no improvement at 24–48h</p>
+</div>
+</div>
+<div id="54-necrotising-fasciitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">5.4 Necrotising Fasciitis</h2>
+<p><span class="label">Common organisms:</span> Type I (polymicrobial): GAS + anaerobes + Gram-negatives Type II (monomicrobial): GAS or S. aureus</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Piperacillin-tazobactam + Clindamycin + Vancomycin IV</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Surgical emergency — antibiotics alone are insufficient</p>
+<p>Clindamycin essential for anti-toxin effect</p>
+<p>Mortality high without early surgical debridement</p>
+<p>IVIG may be considered in severe GAS disease</p>
+</div>
+</div>
+<h1 id="part-6--bone--joint-infections" class="part-title">PART 6 — BONE & JOINT INFECTIONS</h1>
+<div id="61-acute-osteomyelitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">6.1 Acute Osteomyelitis</h2>
+<p><span class="label">Common organisms (age-based):</span> </p>
+<p>Age</p>
+<p>Organisms</p>
+<p>Neonates</p>
+<p>GBS, S. aureus, Gram-negatives</p>
+<p><5 years</p>
+<p>S. aureus, GAS, S. pneumoniae</p>
+<p>>5 years</p>
+<p>S. aureus (dominant), GAS</p>
+<p>Sickle cell</p>
+<p>Salmonella, S. aureus</p>
+<p>Puncture wound</p>
+<p>Pseudomonas aeruginosa</p>
+<div class="treatment-row"><div class="treatment-label">First-line (MSSA, most common):</div><div class="treatment-value">Flucloxacillin 50 mg/kg QDS IV → oral step-down when CRP falling and clinically improving</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line / MRSA suspected:</div><div class="treatment-value">Vancomycin IV OR Clindamycin (if clindamycin-sensitive MRSA)</div></div>
+<p><span class="label">Sickle cell disease:</span> Ceftriaxone + Flucloxacillin (covers both Salmonella and S. aureus)</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>MRI is investigation of choice</p>
+<p>IV-to-oral switch: safe once CRP falling, afebrile, tolerating oral — usually 3–5 days IV</p>
+<p>Total duration: 3–6 weeks depending on organism and response</p>
+<p>Surgical drainage if subperiosteal abscess, no response, or neonatal osteomyelitis</p>
+</div>
+</div>
+<div id="62-septic-arthritis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">6.2 Septic Arthritis</h2>
+<p><span class="label">Common organisms:</span> S. aureus (most common at all ages), GBS (neonates), N. gonorrhoeae (sexually active adolescents), Kingella kingae (toddlers)</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Flucloxacillin 50 mg/kg QDS IV</div></div>
+<p><span class="label">Neonates:</span> Flucloxacillin + Cefotaxime (broad cover for GBS and Gram-negatives)</p>
+<p><span class="label">MRSA suspected:</span> Vancomycin IV</p>
+<p><span class="label">Adolescents (gonococcal):</span> Ceftriaxone 50 mg/kg OD IV</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Orthopedic emergency — joint washout usually required</p>
+<p>Kocher criteria help assess probability (fever, non-weight-bearing, raised CRP/ESR, raised WBC)</p>
+<p>Kingella kingae: oral amoxicillin sufficient once identified</p>
+<p>Duration: 2–3 weeks total (shorter if good surgical drainage)</p>
+</div>
+</div>
+<h1 id="part-7--gastrointestinal-infections" class="part-title">PART 7 — GASTROINTESTINAL INFECTIONS</h1>
+<div id="71-gastroenteritis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">7.1 Gastroenteritis</h2>
+<p><span class="label">Common organisms:</span> Rotavirus, Norovirus, Adenovirus (viral — majority), Salmonella, Campylobacter, E. coli (STEC), Shigella (bacterial)</p>
+<p><span class="label">Antibiotics:</span> Not routinely recommended for viral or uncomplicated bacterial gastroenteritis</p>
+<p><span class="label">Treat with antibiotics if:</span> </p>
+<p><span class="label">Shigella:</span> Azithromycin 12 mg/kg OD x 3 days (first-line UK)</p>
+<p><span class="label">Salmonella (invasive/bacteraemia):</span> Ceftriaxone IV, then Ciprofloxacin oral</p>
+<p><span class="label">Campylobacter (severe/immunocompromised):</span> Azithromycin 10 mg/kg OD x 3 days</p>
+<p><span class="label">Giardia:</span> Metronidazole 7.5 mg/kg TDS x 5–7 days</p>
+<p><span class="label">C. difficile (mild–moderate):</span> Metronidazole; (severe): Oral Vancomycin</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>E. coli O157 (STEC): do NOT give antibiotics — risk of HUS</p>
+<p>Rehydration is the mainstay of treatment</p>
+<p>Rotavirus: prevent with vaccination</p>
+</div>
+</div>
+<div id="72-intra-abdominal-sepsis--peritonitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">7.2 Intra-abdominal Sepsis / Peritonitis</h2>
+<p><span class="label">Common organisms:</span> E. coli, Bacteroides fragilis, Enterococcus, Klebsiella (polymicrobial)</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value">Co-amoxiclav IV OR Ceftriaxone + Metronidazole IV</div></div>
+<div class="treatment-row"><div class="treatment-label">Second-line (severe / hospital-acquired):</div><div class="treatment-value">Piperacillin-tazobactam IV</div></div>
+<p><span class="label">Third-line (ESBL / no response):</span> Meropenem IV</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Surgical source control is essential — antibiotics are adjunctive</p>
+<p>Spontaneous bacterial peritonitis (SBP in cirrhosis): Ceftriaxone + Albumin</p>
+</div>
+</div>
+<h1 id="part-8--fever-without-source--sepsis" class="part-title">PART 8 — FEVER WITHOUT SOURCE & SEPSIS</h1>
+<div id="81-fever-without-source-fws--infant-3-months" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">8.1 Fever Without Source (FWS) — Infant <3 Months</h2>
+<p><span class="label">Risk stratification:</span> Use NICE traffic light, PECARN, or Step-by-Step criteria</p>
+<p><span class="label">High risk / unwell infant:</span> Admit; Blood culture, LP, urine; Start Ceftriaxone + Aciclovir empirically (cover HSV)</p>
+<p><span class="label">Low risk, well infant (>28 days):</span> Observe; LP if <21 days; guided by CRP/PCT</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Age <21 days: always admit and treat as sepsis</p>
+<p>HSV must always be considered in any febrile neonate</p>
+<p>SBI (serious bacterial infection) risk is highest in first 3 months</p>
+</div>
+</div>
+<div id="82-paediatric-sepsis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">8.2 Paediatric Sepsis</h2>
+<p><span class="label">Empiric treatment:</span> </p>
+<p>Setting</p>
+<p>First-line</p>
+<p>Second-line</p>
+<p>Community-acquired</p>
+<p>Ceftriaxone IV</p>
+<p>+ Vancomycin if MRSA risk</p>
+<p>Hospital-acquired</p>
+<p>Piperacillin-tazobactam</p>
+<p>Meropenem if ESBL</p>
+<p>Febrile neutropenia</p>
+<p>Piperacillin-tazobactam</p>
+<p>+ Vancomycin; Meropenem 2nd line</p>
+<p>Neonatal</p>
+<p>Benzylpenicillin + Gentamicin</p>
+<p>Ampicillin + Cefotaxime (meningitis)</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Give antibiotics within 1 hour of sepsis recognition — every hour delay increases mortality</p>
+<p>Follow Sepsis 6 / PEWS protocol</p>
+<p>De-escalate based on cultures — do not continue broad-spectrum unnecessarily</p>
+<p>Consider antifungal if Candida risk factors (VLBW, prolonged antibiotics, TPN, abdominal surgery)</p>
+</div>
+</div>
+<h1 id="part-9--less-common-but-important-infections" class="part-title">PART 9 — LESS COMMON BUT IMPORTANT INFECTIONS</h1>
+<div id="91-lyme-disease" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">9.1 Lyme Disease</h2>
+<p><span class="label">Organism:</span> Borrelia burgdorferi</p>
+<p>Stage</p>
+<p>Treatment</p>
+<p>Early localised (EM rash)</p>
+<p>Amoxicillin x 14–21 days (<8 yrs) or Doxycycline x 14–21 days (≥8 yrs)</p>
+<p>Early disseminated (facial palsy, arthritis)</p>
+<p>Same oral regimen, 21–28 days</p>
+<p>Lyme meningitis / encephalitis</p>
+<p>Ceftriaxone IV x 14–28 days</p>
+<p>Lyme carditis</p>
+<p>Ceftriaxone IV (severe) or oral (mild)</p>
+</div>
+<div id="92-typhoid-fever" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">9.2 Typhoid Fever</h2>
+<p><span class="label">Organism:</span> Salmonella typhi / paratyphi</p>
+<div class="treatment-row"><div class="treatment-label">First-line (sensitive):</div><div class="treatment-value">Azithromycin 20 mg/kg OD x 7 days (oral, uncomplicated)</div></div>
+<p><span class="label">Severe / complicated:</span> Ceftriaxone 80 mg/kg OD IV x 10–14 days</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Ciprofloxacin resistance common in South Asia — avoid empirically</p>
+<p>Notify public health</p>
+<p>School exclusion until 2 negative stool cultures</p>
+</div>
+</div>
+<div id="93-tuberculosis-tb" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">9.3 Tuberculosis (TB)</h2>
+<p><span class="label">Standard regimen:</span> </p>
+<p><span class="label">2 months:</span> Isoniazid + Rifampicin + Pyrazinamide + Ethambutol (HRZE)</p>
+<p><span class="label">4 months:</span> Isoniazid + Rifampicin (HR)</p>
+<p><span class="label">TB Meningitis:</span> </p>
+<p>Same 4 drugs x 2 months, then HR x 10 months (total 12 months)</p>
+<p>Add Dexamethasone</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Always notify public health / TB team</p>
+<p>Check for HIV co-infection</p>
+<p>Contact tracing essential</p>
+<p>Directly observed therapy (DOT) preferred</p>
+</div>
+</div>
+<div id="94-malaria" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">9.4 Malaria</h2>
+<p><span class="label">Organism:</span> Plasmodium falciparum (severe), P. vivax/ovale/malariae</p>
+<p><span class="label">Uncomplicated P. falciparum:</span> Artemether-lumefantrine (Riamet) — weight-based dosing x 3 days</p>
+<p><span class="label">Severe P. falciparum:</span> IV Artesunate (preferred) OR IV Quinine + Doxycycline</p>
+<p><span class="label">P. vivax / ovale:</span> Chloroquine + Primaquine (check G6PD before primaquine)</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Any child returning from endemic area with fever = malaria until proven otherwise</p>
+<p>Thick and thin blood films x 3</p>
+<p>Admit all children with P. falciparum</p>
+<p>Notify public health</p>
+</div>
+</div>
+<div id="95-meningococcal-disease" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">9.5 Meningococcal Disease</h2>
+<p><span class="label">Organism:</span> Neisseria meningitidis (serogroups B, C, W, Y)</p>
+<p><span class="label">Pre-hospital / GP:</span> Benzylpenicillin IM/IV immediately if meningococcal disease suspected and transfer arranged</p>
+<p><span class="label">Hospital:</span> Ceftriaxone 80–100 mg/kg/day IV</p>
+<p><span class="label">Prophylaxis for close contacts:</span> Ciprofloxacin single dose (adults and children >5 years) OR Rifampicin BD x 2 days</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Non-blanching rash + fever = emergency</p>
+<p>Do not delay antibiotics for LP</p>
+<p>Notify public health within 24 hours</p>
+</div>
+</div>
+<h1 id="part-10--fungal-infections-in-children--neonates" class="part-title">PART 10 — FUNGAL INFECTIONS IN CHILDREN & NEONATES</h1>
+<div id="101-invasive-candidiasis--candidaemia" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">10.1 Invasive Candidiasis / Candidaemia</h2>
+<p><span class="label">Risk factors:</span> </p>
+<p>Prematurity (VLBW), prolonged antibiotics, central venous catheter, TPN, abdominal surgery, immunocompromised, steroids</p>
+<p><span class="label">Common organisms:</span> </p>
+<p>Candida albicans, C. parapsilosis (neonates/lines), C. glabrata, C. krusei (azole-resistant), C. auris (emerging, resistant)</p>
+<div class="treatment-row"><div class="treatment-label">First-line (neonates):</div><div class="treatment-value"></div></div>
+<p>Micafungin 10 mg/kg OD IV</p>
+<div class="treatment-row"><div class="treatment-label">First-line (infants and children):</div><div class="treatment-value"></div></div>
+<p>Caspofungin 70 mg/m² loading then 50 mg/m² OD IV</p>
+<p>OR Micafungin 2 mg/kg OD IV</p>
+<p><span class="label">Step-down (once stable, sensitive organism):</span> </p>
+<p>Fluconazole 6–12 mg/kg OD IV/oral (only if C. albicans/parapsilosis, NOT C. krusei/glabrata/auris)</p>
+<div class="treatment-row"><div class="treatment-label">Second-line (azole-resistant / refractory):</div><div class="treatment-value"></div></div>
+<p>Liposomal Amphotericin B 3–5 mg/kg OD IV</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Remove or replace central venous catheter — essential for cure</p>
+<p>Ophthalmology review — Candida endophthalmitis can cause permanent visual loss</p>
+<p>Echocardiogram — exclude Candida endocarditis in prolonged candidaemia</p>
+<p>Duration: minimum 14 days from last positive blood culture and resolution of symptoms</p>
+<p>C. auris: requires specialist ID input — pan-resistant strains reported</p>
+</div>
+</div>
+<div id="102-mucosal-candidiasis-oral-thrush--nappy-rash" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">10.2 Mucosal Candidiasis (Oral Thrush / Nappy Rash)</h2>
+<p><span class="label">Common organisms:</span> </p>
+<p>Candida albicans</p>
+<div class="treatment-row"><div class="treatment-label">First-line (oral thrush):</div><div class="treatment-value"></div></div>
+<p>Nystatin 100,000 units QDS oral x 7 days (swab around all mucosal surfaces)</p>
+<div class="treatment-row"><div class="treatment-label">Second-line / persistent / immunocompromised:</div><div class="treatment-value"></div></div>
+<p>Fluconazole 3–6 mg/kg OD x 7–14 days</p>
+<p><span class="label">Oesophageal candidiasis (immunocompromised):</span> </p>
+<p>Fluconazole 6 mg/kg OD x 14–21 days OR Micafungin IV if fluconazole-resistant</p>
+<p><span class="label">Candida nappy rash:</span> </p>
+<p>Topical Clotrimazole or Miconazole cream x 7–14 days</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Persistent oral thrush in an otherwise well infant beyond 3 months warrants immune workup</p>
+<p>Oesophageal candidiasis in a child = consider HIV or primary immunodeficiency</p>
+</div>
+</div>
+<div id="103-invasive-aspergillosis-ia" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">10.3 Invasive Aspergillosis (IA)</h2>
+<p><span class="label">Risk factors:</span> </p>
+<p>Prolonged neutropenia (AML, HSCT), high-dose steroids, chronic granulomatous disease (CGD), lung transplant</p>
+<p><span class="label">Common organisms:</span> </p>
+<p>Aspergillus fumigatus (most common), A. flavus, A. terreus (amphotericin-resistant), A. niger</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value"></div></div>
+<p>Voriconazole IV/oral</p>
+<p><span class="label"><12 years:</span> 9 mg/kg BD (loading x2 doses, then 8 mg/kg BD)</p>
+<p><span class="label">≥12 years:</span> 6 mg/kg BD loading → 4 mg/kg BD</p>
+<p><span class="label">TDM essential:</span> target trough 1–5.5 mg/L</p>
+<div class="treatment-row"><div class="treatment-label">Second-line / voriconazole intolerant:</div><div class="treatment-value"></div></div>
+<p>Liposomal Amphotericin B 3–5 mg/kg OD IV</p>
+<p><span class="label">Salvage (refractory IA):</span> </p>
+<p>Posaconazole OR Isavuconazole OR Caspofungin (combination with voriconazole)</p>
+<p><span class="label">Prophylaxis (high-risk:</span> AML induction, GVHD on steroids):</p>
+<p>Posaconazole 300 mg OD delayed-release tablet (≥13 years)</p>
+<p>Itraconazole or voriconazole for younger children (per local protocol)</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Galactomannan (serum and BAL) — useful diagnostic marker in neutropenic patients</p>
+<p>CT chest: halo sign, air crescent sign suggest IA</p>
+<p>Voriconazole does NOT cover Mucorales — distinguish from mucormycosis early</p>
+<p>Surgical debridement may be needed for localised disease or CNS involvement</p>
+<p>Chronic pulmonary aspergillosis: long-term oral azole therapy</p>
+</div>
+</div>
+<div id="104-mucormycosis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">10.4 Mucormycosis</h2>
+<p><span class="label">Risk factors:</span> </p>
+<p>Haematological malignancy, DKA, iron overload (deferoxamine therapy), trauma, burns, immunosuppression</p>
+<p><span class="label">Common organisms:</span> </p>
+<p>Rhizopus spp., Mucor spp., Cunninghamella spp. (most lethal)</p>
+<div class="treatment-row"><div class="treatment-label">First-line:</div><div class="treatment-value"></div></div>
+<p>Liposomal Amphotericin B 5–10 mg/kg OD IV (high dose — do not under-dose)</p>
+<p><span class="label">Step-down / adjunct:</span> </p>
+<p>Posaconazole delayed-release tablet OR Isavuconazole (once stable)</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Surgical debridement is mandatory and urgent — antibiotics alone will fail</p>
+<p>Rhinosinusal mucormycosis: ENT + ophthalmology + neurosurgery involvement</p>
+<p>Voriconazole has NO activity — if started for suspected Aspergillus and not improving, consider Mucor and switch to amphotericin</p>
+<p>Cunninghamella species: extremely aggressive, very high mortality</p>
+<p>Do NOT use posaconazole suspension — poor absorption; delayed-release tablet only</p>
+<p>Combination amphotericin + echinocandin used in some centres</p>
+</div>
+</div>
+<div id="105-pneumocystis-jirovecii-pneumonia-pcp" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">10.5 Pneumocystis jirovecii Pneumonia (PCP)</h2>
+<p><span class="label">Risk factors:</span> </p>
+<p>HIV/AIDS (CD4 <200), prolonged steroids, SCID, leukaemia (especially during maintenance), organ transplant, biologic therapies</p>
+<div class="treatment-row"><div class="treatment-label">First-line (treatment):</div><div class="treatment-value"></div></div>
+<p>Co-trimoxazole (TMP-SMX) 120 mg/kg/day in 4 divided doses IV/oral x 21 days</p>
+<p>Add Prednisolone if moderate-severe (PaO2 <70 mmHg or A-a gradient >35)</p>
+<div class="treatment-row"><div class="treatment-label">Second-line (intolerant to co-trimoxazole):</div><div class="treatment-value"></div></div>
+<p>IV Pentamidine 4 mg/kg OD x 21 days</p>
+<p>OR Atovaquone (mild–moderate disease)</p>
+<p>OR Primaquine + Clindamycin</p>
+<p><span class="label">Prophylaxis:</span> </p>
+<p>Co-trimoxazole 150 mg/m²/day trimethoprim component in 2 divided doses, 3 days per week</p>
+<div class="treatment-row"><div class="treatment-label">Alternative:</div><div class="treatment-value">Dapsone or monthly nebulised Pentamidine (>5 years)</div></div>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>PCP in a previously well child = investigate for underlying immunodeficiency</p>
+<p>BAL with silver stain or PCR for diagnosis</p>
+<p>HIV test in all newly diagnosed PCP</p>
+<p>Do not stop prophylaxis prematurely in HIV — continue until immune reconstitution (CD4 >200 for >3 months)</p>
+</div>
+</div>
+<div id="106-cryptococcal-meningitis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">10.6 Cryptococcal Meningitis</h2>
+<p><span class="label">Risk factors:</span> </p>
+<p>HIV (CD4 <100), organ transplant, haematological malignancy</p>
+<div class="treatment-row"><div class="treatment-label">First-line (induction — 2 weeks):</div><div class="treatment-value"></div></div>
+<p>Liposomal Amphotericin B 3–4 mg/kg OD IV + Flucytosine 25 mg/kg QDS oral/IV</p>
+<p><span class="label">Consolidation (8 weeks):</span> </p>
+<p>Fluconazole 12 mg/kg OD oral (max 800 mg)</p>
+<p><span class="label">Maintenance (≥12 months, HIV):</span> </p>
+<p>Fluconazole 6 mg/kg OD until immune reconstitution</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>India ink stain and cryptococcal antigen (CrAg) — rapid bedside diagnosis</p>
+<p>Serial LPs essential — raised intracranial pressure is the main cause of early death</p>
+<p>ICP management: daily LP or lumbar drain until opening pressure <20 cmH2O</p>
+<p>Flucytosine: monitor levels and FBC (bone marrow suppression)</p>
+<p>Rare in immunocompetent children — always investigate immunity</p>
+</div>
+</div>
+<div id="107-dermatophytosis-tinea-infections" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">10.7 Dermatophytosis (Tinea Infections)</h2>
+<p><span class="label">Common organisms:</span> </p>
+<p>Trichophyton, Microsporum, Epidermophyton spp.</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Tinea capitis requires systemic treatment — topical alone is insufficient</p>
+<p>Kerion (inflammatory tinea capitis): add short course of prednisolone to reduce scarring</p>
+<p>Contagious — check household contacts and pets (Microsporum canis from cats/dogs)</p>
+<p>Wood's lamp: green fluorescence with Microsporum species only</p>
+</div>
+</div>
+<div id="108-invasive-fungal-infections-in-specific-contexts" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">10.8 Invasive Fungal Infections in Specific Contexts</h2>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Aspergillus is the leading cause of death</p>
+<p>Lifelong Itraconazole prophylaxis 5 mg/kg OD</p>
+<p>Treat invasive aspergillosis with Voriconazole + consider IFN-γ</p>
+<p>Allergic Bronchopulmonary Aspergillosis (ABPA): Itraconazole + Prednisolone</p>
+<p>Aspergillus sensitisation: monitor IgE, spirometry</p>
+<p>Scedosporium apiospermum colonisation: increasing post-transplant — Voriconazole</p>
+<p>Mould prophylaxis: Posaconazole (≥13 yrs) or Voriconazole</p>
+<p>Pre-emptive therapy guided by galactomannan and CT findings</p>
+<p>Echinocandin for suspected invasive candidiasis before species identification</p>
+</div>
+</div>
+<h1 id="part-11--viral-infections-in-children--neonates" class="part-title">PART 11 — VIRAL INFECTIONS IN CHILDREN & NEONATES</h1>
+<div id="111-herpes-simplex-virus-hsv" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.1 Herpes Simplex Virus (HSV)</h2>
+<p><span class="label">Treatment (Neonatal):</span> </p>
+<p>IV Aciclovir 20 mg/kg TDS</p>
+<p><span class="label">Treatment (Encephalitis):</span> </p>
+<p>IV Aciclovir 10–15 mg/kg TDS</p>
+<p><span class="label">Treatment (Gingivostomatitis):</span> </p>
+<p>Oral Aciclovir 20 mg/kg QDS</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Suppressive therapy: Oral Aciclovir or Valaciclovir daily for 6–12 months</p>
+<p>Aciclovir-resistant HSV: IV Foscarnet (specialist use only)</p>
+</div>
+</div>
+<div id="112-varicella-zoster-virus-vzv" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.2 Varicella Zoster Virus (VZV)</h2>
+<div class="treatment-row"><div class="treatment-label">First-line (oral, mild–moderate):</div><div class="treatment-value"></div></div>
+<p>Aciclovir 20 mg/kg QDS x 5 days (start within 24h of rash) OR Valaciclovir 20 mg/kg TDS x 5 days (max 1g TDS)</p>
+<div class="treatment-row"><div class="treatment-label">First-line (severe / immunocompromised):</div><div class="treatment-value"></div></div>
+<p>IV Aciclovir 10 mg/kg TDS x 7–10 days</p>
+<p><span class="label">Post-exposure prophylaxis:</span> </p>
+<p>Varicella-Zoster Immunoglobulin (VZIG) within 10 days of exposure — for immunocompromised, neonates, pregnant contacts</p>
+</div>
+<div id="113-cytomegalovirus-cmv" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.3 Cytomegalovirus (CMV)</h2>
+<div class="treatment-row"><div class="treatment-label">First-line (Congenital):</div><div class="treatment-value"></div></div>
+<p>Oral Valganciclovir 16 mg/kg BD</p>
+<div class="treatment-row"><div class="treatment-label">First-line (treatment):</div><div class="treatment-value"></div></div>
+<p>IV Ganciclovir 5 mg/kg BD</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Congenital CMV: test hearing before and after treatment</p>
+<p>Monitor FBC weekly — ganciclovir causes neutropenia</p>
+<p>CMV viraemia in transplant: pre-emptive treatment when viral load rising</p>
+<p>Ganciclovir-resistant CMV: IV Foscarnet OR Cidofovir (specialist)</p>
+</div>
+</div>
+<div id="114-epstein-barr-virus-ebv--infectious-mononucleosis" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.4 Epstein-Barr Virus (EBV) / Infectious Mononucleosis</h2>
+<p><span class="label">Treatment:</span> </p>
+<p>Supportive — no antiviral indicated for uncomplicated infectious mononucleosis</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Do NOT give Amoxicillin or ampicillin — causes widespread maculopapular rash in ~95%</p>
+<p>Avoid contact sports for minimum 4 weeks (splenic rupture risk)</p>
+</div>
+</div>
+<div id="115-respiratory-syncytial-virus-rsv" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.5 Respiratory Syncytial Virus (RSV)</h2>
+<p><span class="label">Treatment:</span> </p>
+<p>Supportive — no antiviral routinely recommended</p>
+<p><span class="label">Antiviral (specialist use only):</span> </p>
+<p>Inhaled Ribavirin — severely immunocompromised children</p>
+<p><span class="label">Prevention:</span> </p>
+<p>Palivizumab 15 mg/kg IM monthly during RSV season</p>
+</div>
+<div id="116-influenza" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.6 Influenza</h2>
+<p><span class="label">Treatment:</span> </p>
+<p><span class="label">Oseltamivir (Tamiflu) — by weight <15 kg:</span> 30 mg BD x 5 days</p>
+<div class="notes-box">
+<strong>Important Notes:</strong>
+<p>Most effective if started within 48h of symptom onset</p>
+</div>
+</div>
+<div id="117-covid-19-sars-cov-2" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.7 COVID-19 (SARS-CoV-2)</h2>
+<p><span class="label">Treatment:</span> </p>
+<p>Nirmatrelvir/ritonavir (Paxlovid) — limited paediatric data</p>
+<p>Remdesivir IV</p>
+<p>Dexamethasone 0.15 mg/kg OD x 10 days</p>
+<p><span class="label">MIS-C (Multisystem inflammatory syndrome):</span> </p>
+<p>IVIG 2 g/kg + Aspirin + consider steroids</p>
+</div>
+<div id="118-hepatitis-b-virus-hbv" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.8 Hepatitis B Virus (HBV)</h2>
+<p><span class="label">Treatment:</span> </p>
+<p>Tenofovir disoproxil fumarate (TDF) OR Entecavir</p>
+</div>
+<div id="119-hepatitis-c-virus-hcv" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.9 Hepatitis C Virus (HCV)</h2>
+<p><span class="label">Treatment (≥3 years):</span> </p>
+<p>Sofosbuvir/Velpatasvir (EPCLUSA)</p>
+</div>
+<div id="1110-hiv-in-children" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.10 HIV in Children</h2>
+<p><span class="label">Treatment:</span> </p>
+<p>Lopinavir/ritonavir + 2 NRTIs (ABC + 3TC)</p>
+<p>Dolutegravir + 2 NRTIs</p>
+</div>
+<div id="1111-viral-haemorrhagic-fevers-vhf" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.11 Viral Haemorrhagic Fevers (VHF)</h2>
+<p><span class="label">Treatment:</span> </p>
+<p><span class="label">Ebola:</span> Atoltivimab/maftivimab/odesivimab</p>
+<p><span class="label">Lassa fever:</span> IV Ribavirin</p>
+<p><span class="label">CCHF:</span> IV Ribavirin</p>
+</div>
+<div id="1112-enteroviruses-coxsackievirus-echovirus-ev-a71" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.12 Enteroviruses (Coxsackievirus, Echovirus, EV-A71)</h2>
+<p><span class="label">Treatment:</span> </p>
+<p>Supportive — no licensed antiviral for most enteroviral disease</p>
+<p><span class="label">Severe neonatal enteroviral sepsis:</span> IV Immunoglobulin (IVIG)</p>
+</div>
+<div id="1113-measles" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.13 Measles</h2>
+<p><span class="label">Treatment:</span> </p>
+<p>Supportive — no specific antiviral licensed</p>
+<p>Vitamin A</p>
+</div>
+<div id="1114-mumps--rubella" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.14 Mumps & Rubella</h2>
+<p><span class="label">Treatment:</span> </p>
+<p>Supportive only — no antiviral</p>
+</div>
+<div id="1115-adenovirus" class="topic-card" style="scroll-margin-top: 40px;">
+<h2 class="topic-title">11.15 Adenovirus</h2>
+<p><span class="label">Treatment:</span> </p>
+<p>Cidofovir IV (specialist use) OR Brincidofovir oral</p>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    const navLinksData = [
+        { id: 'part-1--neonatal-infections-028-days', text: 'PART 1 - NEONATAL INFECTIONS (0â€“28 days)' },
+        { id: '11-early-onset-neonatal-sepsis-eos', text: '&nbsp;&nbsp;↳ 1.1 Early-Onset Neonatal Sepsis (EOS)' },
+        { id: '12-late-onset-neonatal-sepsis-los', text: '&nbsp;&nbsp;↳ 1.2 Late-Onset Neonatal Sepsis (LOS)' },
+        { id: '13-neonatal-meningitis', text: '&nbsp;&nbsp;↳ 1.3 Neonatal Meningitis' },
+        { id: '14-neonatal-hsv-infection', text: '&nbsp;&nbsp;↳ 1.4 Neonatal HSV Infection' },
+        { id: '15-neonatal-conjunctivitis-ophthalmia-neonatorum', text: '&nbsp;&nbsp;↳ 1.5 Neonatal Conjunctivitis (Ophthalmia Neonatorum)' },
+        { id: '16-neonatal-omphalitis', text: '&nbsp;&nbsp;↳ 1.6 Neonatal Omphalitis' },
+        { id: 'part-2--respiratory-tract-infections', text: 'PART 2 - RESPIRATORY TRACT INFECTIONS' },
+        { id: '21-community-acquired-pneumonia-cap', text: '&nbsp;&nbsp;↳ 2.1 Community-Acquired Pneumonia (CAP)' },
+        { id: '22-pertussis-whooping-cough', text: '&nbsp;&nbsp;↳ 2.2 Pertussis (Whooping Cough)' },
+        { id: '23-acute-otitis-media-aom', text: '&nbsp;&nbsp;↳ 2.3 Acute Otitis Media (AOM)' },
+        { id: '24-acute-tonsillitis--pharyngitis', text: '&nbsp;&nbsp;↳ 2.4 Acute Tonsillitis / Pharyngitis' },
+        { id: '25-acute-sinusitis', text: '&nbsp;&nbsp;↳ 2.5 Acute Sinusitis' },
+        { id: '26-epiglottitis', text: '&nbsp;&nbsp;↳ 2.6 Epiglottitis' },
+        { id: 'part-3--urinary-tract-infections', text: 'PART 3 - URINARY TRACT INFECTIONS' },
+        { id: '31-lower-uti-cystitis', text: '&nbsp;&nbsp;↳ 3.1 Lower UTI (Cystitis)' },
+        { id: '32-upper-uti--pyelonephritis--febrile-uti', text: '&nbsp;&nbsp;↳ 3.2 Upper UTI / Pyelonephritis / Febrile UTI' },
+        { id: 'part-4--cns-infections', text: 'PART 4 - CNS INFECTIONS' },
+        { id: '41-bacterial-meningitis-beyond-neonatal-period', text: '&nbsp;&nbsp;↳ 4.1 Bacterial Meningitis (beyond neonatal period)' },
+        { id: '42-viral-encephalitis', text: '&nbsp;&nbsp;↳ 4.2 Viral Encephalitis' },
+        { id: '43-brain-abscess', text: '&nbsp;&nbsp;↳ 4.3 Brain Abscess' },
+        { id: 'part-5--skin--soft-tissue-infections', text: 'PART 5 - SKIN & SOFT TISSUE INFECTIONS' },
+        { id: '51-impetigo', text: '&nbsp;&nbsp;↳ 5.1 Impetigo' },
+        { id: '52-cellulitis', text: '&nbsp;&nbsp;↳ 5.2 Cellulitis' },
+        { id: '53-orbital-cellulitis-postseptal', text: '&nbsp;&nbsp;↳ 5.3 Orbital Cellulitis (Postseptal)' },
+        { id: '54-necrotising-fasciitis', text: '&nbsp;&nbsp;↳ 5.4 Necrotising Fasciitis' },
+        { id: 'part-6--bone--joint-infections', text: 'PART 6 - BONE & JOINT INFECTIONS' },
+        { id: '61-acute-osteomyelitis', text: '&nbsp;&nbsp;↳ 6.1 Acute Osteomyelitis' },
+        { id: '62-septic-arthritis', text: '&nbsp;&nbsp;↳ 6.2 Septic Arthritis' },
+        { id: 'part-7--gastrointestinal-infections', text: 'PART 7 - GASTROINTESTINAL INFECTIONS' },
+        { id: '71-gastroenteritis', text: '&nbsp;&nbsp;↳ 7.1 Gastroenteritis' },
+        { id: '72-intra-abdominal-sepsis--peritonitis', text: '&nbsp;&nbsp;↳ 7.2 Intra-abdominal Sepsis / Peritonitis' },
+        { id: 'part-8--fever-without-source--sepsis', text: 'PART 8 - FEVER WITHOUT SOURCE & SEPSIS' },
+        { id: '81-fever-without-source-fws--infant-3-months', text: '&nbsp;&nbsp;↳ 8.1 Fever Without Source (FWS) â€” Infant <3 Months' },
+        { id: '82-paediatric-sepsis', text: '&nbsp;&nbsp;↳ 8.2 Paediatric Sepsis' },
+        { id: 'part-9--less-common-but-important-infections', text: 'PART 9 - LESS COMMON BUT IMPORTANT INFECTIONS' },
+        { id: '91-lyme-disease', text: '&nbsp;&nbsp;↳ 9.1 Lyme Disease' },
+        { id: '92-typhoid-fever', text: '&nbsp;&nbsp;↳ 9.2 Typhoid Fever' },
+        { id: '93-tuberculosis-tb', text: '&nbsp;&nbsp;↳ 9.3 Tuberculosis (TB)' },
+        { id: '94-malaria', text: '&nbsp;&nbsp;↳ 9.4 Malaria' },
+        { id: '95-meningococcal-disease', text: '&nbsp;&nbsp;↳ 9.5 Meningococcal Disease' },
+        { id: 'part-10--fungal-infections-in-children--neonates', text: 'PART 10 — FUNGAL INFECTIONS IN CHILDREN & NEONATES' },
+        { id: '101-invasive-candidiasis--candidaemia', text: '&nbsp;&nbsp;↳ 10.1 Invasive Candidiasis / Candidaemia' },
+        { id: '102-mucosal-candidiasis-oral-thrush--nappy-rash', text: '&nbsp;&nbsp;↳ 10.2 Mucosal Candidiasis (Oral Thrush / Nappy Rash)' },
+        { id: '103-invasive-aspergillosis-ia', text: '&nbsp;&nbsp;↳ 10.3 Invasive Aspergillosis (IA)' },
+        { id: '104-mucormycosis', text: '&nbsp;&nbsp;↳ 10.4 Mucormycosis' },
+        { id: '105-pneumocystis-jirovecii-pneumonia-pcp', text: '&nbsp;&nbsp;↳ 10.5 Pneumocystis jirovecii Pneumonia (PCP)' },
+        { id: '106-cryptococcal-meningitis', text: '&nbsp;&nbsp;↳ 10.6 Cryptococcal Meningitis' },
+        { id: '107-dermatophytosis-tinea-infections', text: '&nbsp;&nbsp;↳ 10.7 Dermatophytosis (Tinea Infections)' },
+        { id: '108-invasive-fungal-infections-in-specific-contexts', text: '&nbsp;&nbsp;↳ 10.8 Invasive Fungal Infections in Specific Contexts' },
+        { id: 'part-11--viral-infections-in-children--neonates', text: 'PART 11 — VIRAL INFECTIONS IN CHILDREN & NEONATES' },
+        { id: '111-herpes-simplex-virus-hsv', text: '&nbsp;&nbsp;↳ 11.1 Herpes Simplex Virus (HSV)' },
+        { id: '112-varicella-zoster-virus-vzv', text: '&nbsp;&nbsp;↳ 11.2 Varicella Zoster Virus (VZV)' },
+        { id: '113-cytomegalovirus-cmv', text: '&nbsp;&nbsp;↳ 11.3 Cytomegalovirus (CMV)' },
+        { id: '114-epstein-barr-virus-ebv--infectious-mononucleosis', text: '&nbsp;&nbsp;↳ 11.4 Epstein-Barr Virus (EBV) / Infectious Mononucleosis' },
+        { id: '115-respiratory-syncytial-virus-rsv', text: '&nbsp;&nbsp;↳ 11.5 Respiratory Syncytial Virus (RSV)' },
+        { id: '116-influenza', text: '&nbsp;&nbsp;↳ 11.6 Influenza' },
+        { id: '117-covid-19-sars-cov-2', text: '&nbsp;&nbsp;↳ 11.7 COVID-19 (SARS-CoV-2)' },
+        { id: '118-hepatitis-b-virus-hbv', text: '&nbsp;&nbsp;↳ 11.8 Hepatitis B Virus (HBV)' },
+        { id: '119-hepatitis-c-virus-hcv', text: '&nbsp;&nbsp;↳ 11.9 Hepatitis C Virus (HCV)' },
+        { id: '1110-hiv-in-children', text: '&nbsp;&nbsp;↳ 11.10 HIV in Children' },
+        { id: '1111-viral-haemorrhagic-fevers-vhf', text: '&nbsp;&nbsp;↳ 11.11 Viral Haemorrhagic Fevers (VHF)' },
+        { id: '1112-enteroviruses-coxsackievirus-echovirus-ev-a71', text: '&nbsp;&nbsp;↳ 11.12 Enteroviruses (Coxsackievirus, Echovirus, EV-A71)' },
+        { id: '1113-measles', text: '&nbsp;&nbsp;↳ 11.13 Measles' },
+        { id: '1114-mumps--rubella', text: '&nbsp;&nbsp;↳ 11.14 Mumps & Rubella' },
+        { id: '1115-adenovirus', text: '&nbsp;&nbsp;↳ 11.15 Adenovirus' },
+    ];
+    
+    const root = document.getElementById('nav-links');
+    navLinksData.forEach(link => {
+        const a = document.createElement('a');
+        a.href = '#' + link.id;
+        a.className = 'nav-item';
+        a.innerHTML = link.text;
+        
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.getElementById(link.id);
+            if(target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+                history.pushState(null, null, '#' + link.id);
+            }
+        });
+        
+        root.appendChild(a);
+    });
+    
+    // Add smooth scrolling to static links (Cover / Preface)
+    document.querySelectorAll('#nav-links a.nav-item[href^="#"]').forEach(anchor => {
+        if (!anchor.id) {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    history.pushState(null, null, '#' + targetId);
+                }
+            });
+        }
+    });
+
+</script>
+</body>
+</html>
